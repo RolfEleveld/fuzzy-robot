@@ -37,7 +37,7 @@ function customize() {
     var styleSheet: HTMLElement = document.createElement('STYLE');
     styleSheet.setAttribute("type",'text/css');
     styleSheet.setAttribute("rel", 'stylesheet');
-    styleSheet.setAttribute("href", './Theme.css');
+    styleSheet.setAttribute("href", 'https://raw.githubusercontent.com/RolfEleveld/fuzzy-robot/master/RerenderContent/CamionTransport/Theme.css');
     document.head.appendChild(styleSheet);
 
     //replace menu icons

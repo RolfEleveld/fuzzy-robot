@@ -5,3 +5,23 @@ body,
 body.ms-formbody {
     margin: 0;
 }
+
+.mpsnow-TopNavigationNode{
+    background-color: white;
+}
+
+.mpsnow-TopNavigationNode:hover, .mpsnow-TopNavigationNode.selected {
+    background-color: rgb(51, 51, 51);
+}
+
+.mpsnow-webPartZoneRightSection {
+    background-color: rgb(51, 51, 51);
+}
+
+.mp-crwpRangeControl.ui-slider-horizontal .ui-slider-range {
+    background-color: rgb(170, 43, 62);
+}
+
+a, a:visited {
+    color: rgb(170, 43, 62);
+}
