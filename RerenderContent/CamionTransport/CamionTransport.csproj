@@ -23,7 +23,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Replace.js" />
-    <Content Include="Theme.css" />
     <Content Include="index.html" />
     <TypeScriptCompile Include="Replace.ts" />
     <Content Include="web.config" />

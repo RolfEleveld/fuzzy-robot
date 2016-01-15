@@ -34,78 +34,69 @@ function secondfrequencies() {
 }
 function customize() {
     //load the style
-    var styleSheet: HTMLElement = document.createElement('STYLE');
-    styleSheet.setAttribute("type",'text/css');
-    styleSheet.setAttribute("rel", 'stylesheet');
-    styleSheet.setAttribute("href", 'https://raw.githubusercontent.com/RolfEleveld/fuzzy-robot/master/RerenderContent/CamionTransport/Theme.css');
-    document.head.appendChild(styleSheet);
+    //var styleSheet: HTMLElement = document.createElement('STYLE');
+    //styleSheet.setAttribute("type",'text/css');
+    //styleSheet.setAttribute("rel", 'stylesheet');
+    //styleSheet.setAttribute("href", 'https://raw.githubusercontent.com/RolfEleveld/fuzzy-robot/master/RerenderContent/CamionTransport/Theme.css');
+    //document.head.appendChild(styleSheet);
 
     //replace menu icons
 
     //replace page icon
-    http://www.camiontransport.ch/favicon.ico
+    document.body.innerHTML = document.body.innerHTML.replace(/\/_layouts\/15\/images\/Colygon\.MatchPoint\.Snow\/favicon\.ico/g, "http://www.camiontransport.ch/favicon.ico");
+
+    //replace colors:
+    for (var count: number = 0; count < document.styleSheets.length; count++) {
+        document.styleSheets[count].href;
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(255, 134, 31\)/g, 'rgb(170, 43, 62)');
+    }
 
     //replace logo
     $('#mpsnow-Logo > img').attr('src', "http://www.camiontransport.ch/portaldata/1/images/logo_symbol.gif");
 
-    //replace gmz
+    //replace words
     document.body.innerHTML = document.body.innerHTML.replace(/gmz/g, 'Camion Transport').replace(/GMZ/g, 'Camion Transport');
+    document.body.innerHTML = document.body.innerHTML.replace(/migros/g, 'CT').replace(/GMZ/g, 'Camion Transport');
 
     // hashtags
 
     // Workspaces
-    document.body.innerHTML = document.body.innerHTML.replace(/Kassensystem/g, 'Electro');
+    document.body.innerHTML = document.body.innerHTML.replace(/Community/g, 'On The Road');
 
-    // belending the icons on the right side
-    $("ul.mpsnow-ul-no-bullets img").each(function (index) {
-        this.style.opacity = 0.99;
-    });
+    //Setting people images
+    document.body.innerHTML = document.body.innerHTML.replace(/vc0065\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'media.licdn.com/mpr/mpr/shrinknp_400_400/p/3/005/081/1b2/095ace7.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Josef A. Jäger');
+
+    document.body.innerHTML = document.body.innerHTML.replace(/vc0065\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'x1.xingassets.com/image/a_5_f_5e5312c87_23268962_1/josef-jäger-foto.256x256.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Reto Schenk');
 
     // Content TimeLine
     if ($('#pageTitle').text().trim() === "Timeline") {
         firstfrequencies();
 
-        //Setting images
-        $('.mpsnow-post-image > img')[0].setAttribute("src", "http://www.burkhalter.ch/img/catalogue/0/1232/80_53_71bcacc5-61e9-4701-a770-fe3f5384feb5.jpg");
+        $('.mpsnow-feed-RowContainer')[0].remove();
 
-        // Setting content
-        $('.mpsnow-feed-date')[0].innerText = "5/11/2015 at 12:23 PM";
-        $(".mpsnow-post-text > blockquote > a:first-child")[0].innerText = "BK Weekly 24 - Generalversammlung 22. Mai 2015";
-        $(".mpsnow-post-text > blockquote")[0].innerHTML = $(".mpsnow-post-text > blockquote")[0].innerHTML.replace(/<br>[^<]+<br>/, "<br>Generalversammlung, Swissôtel Zürich, Schulstrasse 44, 8050 Zürich; New Intranet for mobile and on the road updates; Good customer portfolio from May onwards.<br>");
+        // images on content
+        document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881808960000000/g, 'http://www.camiontransport.ch/PortalData/1/Resources/bilder/aktuelles/CT_90Anni_01.jpg');
+        document.body.innerHTML = document.body.innerHTML.replace(/75 Jahr/g, '90 Jahr');
+
+        document.body.innerHTML = document.body.innerHTML.replace(/das Fitnessunternehmen Inline\/Injoy/g, 'der Jost Transport GmbH, Rümlang');
+        document.body.innerHTML = document.body.innerHTML.replace('Die Camion Transport-Tochtergesellschaft Migros Freizeit Deutschland GmbH übernimmt die deutsche Firma INLINE Beratung für Fitnessanlagen', 'CAMION TRANSPORT AG (CT) übernimmt die Bereiche Transport und Logistik der Jost Transport GmbH in Rümlang per 1. Januar 2016.');
+        document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881805010000000/g, 'http://www.camiontransport.ch/PortalData/1/Resources/bilder/aktuelles/CT_JostTransporte.jpg');
     }
     // Workspaces
     if ($('#pageTitle').text().trim() === "Workspaces") {
         firstfrequencies();
-
-        $('.mpsnow-feed-date')[0].innerText = "5/11/2015 at 12:23 PM";
-        $(".mpsnow-post-text > blockquote")[0].innerText = "HR update for group";
-
-        // next page indicator
-        if ($("img.ms-promlink-button-right")[0]) {
-            $("img.ms-promlink-button-right")[0].style.opacity = "0.3";
-        }
+        secondfrequencies();
     }
     if ($('#pageTitle').text().trim() === "Content") {
         firstfrequencies();
         secondfrequencies();
-        // dates
-        $('.mpsnow-feed-date')[0].innerText = "5/11/2015 at 12:23 PM";
-
-        //headings
-        $('h2.mpsnow-feedHeader > a')[0].innerText = 'BK Weekly 24';
-
     }
     if ($('#pageTitle').text().trim() === "People") {
        // Nothing now
     }
     if ($('#pageTitle').text().trim() == "News") {
-        $("div.news-compositeWP-teaser-title span").each(function (index) {
-            this.style.color = "#bbb";
-        });
-
-        $("div.news-compositeWP-teaser-title span")[0].innerText = "BK Weekly 24";
-        $('img.news-compositeWP-teaser-imageContainer')[0].setAttribute("src", "http://www.burkhalter.ch/img/catalogue/0/1232/80_53_cc6488eb-c204-4c43-987b-0b7a902d2d45.jpg");
-        $("div.news-compositeWP-teaser-abstract")[0].innerHTML = $("div.news-compositeWP-teaser-abstract")[0].innerHTML.replace(/^[^<]+/, "Joining efforts with Kolb group has shared a few ideas and concepts of cable improvements. Teh speed of wiring an installation is particularly one that has major improvements. Not ony in teh quality of teh result, also in the speed at which the cabling can be done.");
     
     }
     //Potal?
@@ -114,29 +105,6 @@ function customize() {
             case 1:
                 this.src = "http://demo.cloudimg.io/s/crop/1024x380/http://www.burkhalter.ch/img/catalogue/0/117/O_14fbb217-33a4-4d40-9544-a275d32b7abe.jpg";
                 break
-            case 2:
-                this.src = "http://demo.cloudimg.io/s/crop/1024x380/http://www.burkhalter.ch/img/catalogue/0/1232/O_6fb9b0aa-111b-46f6-a837-2e4a0b68b57c.jpg";
-                break;
-            case 3:
-                this.src = "http://demo.cloudimg.io/s/crop/1024x380/http://www.burkhalter.ch/img/catalogue/0/117/O_6b654689-d97d-4a5f-8ae9-1f552dcfbafc.jpg";
-                break;
-            case 4:
-                this.src = "http://demo.cloudimg.io/s/crop/1024x380/http://www.burkhalter.ch/img/catalogue/0/1232/O_71bcacc5-61e9-4701-a770-fe3f5384feb5.jpg";
-                break;
-            case 5:
-                this.src = "http://demo.cloudimg.io/s/crop/1024x380/http://www.burkhalter-technics.ch/img/catalogue/0/11/O_fb502cc2-dfef-4a8f-90c7-8b54b48189b7.jpg";
-                break;
-        }
-    });
-    $('div.its-nav-first h1').each(function (index) {
-        if (this.innerText.trim() == "Product" && index == 1) {
-            this.innerText = "External";
-        }
-        if (this.innerText.trim() == "External" && index == 3) {
-            this.innerText = "Services";
-            $('div.its-nav-first')[3].innerHTML = $('div.its-nav-first')[3].innerHTML.replace(/Tools/g, "Electrical Engineering")
-                .replace(/SBB/g, "Installations").replace(/A Site to Search the Internet/g, "Services")
-                .replace(/Internal/g, "Switchboards").replace(/Legacy Task Management/g, "Telematics").replace(/CRM/g, "Automation");
         }
     });
 }
