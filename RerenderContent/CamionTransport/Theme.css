@@ -1,0 +1,7 @@
+﻿/* load with document.createStyleSheet('./Theme.css'); */
+
+html,
+body,
+body.ms-formbody {
+    margin: 0;
+}
