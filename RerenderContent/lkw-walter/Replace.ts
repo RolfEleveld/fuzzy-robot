@@ -34,17 +34,10 @@ function secondfrequencies() {
 
 }
 function customize() {
-    //load the style
-    //var styleSheet: HTMLElement = document.createElement('STYLE');
-    //styleSheet.setAttribute("type",'text/css');
-    //styleSheet.setAttribute("rel", 'stylesheet');
-    //styleSheet.setAttribute("href", 'https://raw.githubusercontent.com/RolfEleveld/fuzzy-robot/master/RerenderContent/Planzer/Theme.css');
-    //document.head.appendChild(styleSheet);
-
     //replace menu icons
 
     //replace page icon
-    document.body.innerHTML = document.body.innerHTML.replace(/\/_layouts\/15\/images\/Colygon\.MatchPoint\.Snow\/favicon\.ico/g, "http://www.Planzer.ch/favicon.ico");
+    document.body.innerHTML = document.body.innerHTML.replace(/\/_layouts\/15\/images\/Colygon\.MatchPoint\.Snow\/favicon\.ico/g, "http://www.lkw-walter.ch/favicon.ico");
 
     //replace colors and font:
     for (var count = 0; count < document.styleSheets.length; count++) {
@@ -58,7 +51,7 @@ function customize() {
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/.ms-webpart-titleText *\{[^}]+}/g, '.ms-webpart-titleText{margin:0 0 .35em 0;padding:.09em;background-color:#fff;font-family:Univers,Arial,Helvetica,sans-serif;font-size:15px;border:0;color:#72869f;line-height:20px;text-align:right;font-weight:bold;text-transform:uppercase;}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/.ms-core-pageTitle *\{[^}]+}/g, '.ms-webpart-titleText{font-family:Univers,Arial,Helvetica,sans-serif;font-size:15px;line-height:20px;text-align:right;font-weight:bold;text-transform:uppercase;}');
     }
-    document.styleSheets[0].cssText = document.styleSheets[0].cssText + '\ndiv.ms-breadcrumb-top{background: url(http://planzerwebsitestorage.blob.core.windows.net/files/Content/images/pic_dashboard.png);}div.mpsnow-TopNavigationNode{background-color:transparent;}\ndiv.mpsnow-TopNavigationNode{background: linear-gradient(to bottom,#3f4448 0%,#24272a 100%);}\n*{font-family: Univers, Arial, Helvetica, sans - serif;}';
+    document.styleSheets[0].cssText = document.styleSheets[0].cssText + '\ndiv.ms-breadcrumb-top{background: url(http://lkw-walterwebsitestorage.blob.core.windows.net/files/Content/images/pic_dashboard.png);}div.mpsnow-TopNavigationNode{background-color:transparent;}\ndiv.mpsnow-TopNavigationNode{background: linear-gradient(to bottom,#3f4448 0%,#24272a 100%);}\n*{font-family: Univers, Arial, Helvetica, sans - serif;}';
 
     //
     $('H2.ms-webpart-titleText').attr('style',"")
@@ -66,14 +59,14 @@ function customize() {
     // replace menu background    
     
     //replace logo
-    $('#mpsnow-Logo > img').attr('src', "http://planzerwebsitestorage.blob.core.windows.net/files/Content/images/logo_planzer.png");
+    $('#mpsnow-Logo > img').attr('src', "http://lkw-walterwebsitestorage.blob.core.windows.net/files/Content/images/logo_lkw-walter.png");
 
     //replace words
-    document.body.innerHTML = document.body.innerHTML.replace(/[mM]ettler.[tT]oledo/g, 'Planzer');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Vv][Aa][Ll]]Oo][Rr][Aa]/g, 'Planzer');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Gg][Mm][Zz]/g, 'Planzer');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]igros/g, 'Planzer');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Kk] *[Kk]iosk/g, 'Planzer');
+    document.body.innerHTML = document.body.innerHTML.replace(/[mM]ettler.[tT]oledo/g, 'lkw-walter');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Vv][Aa][Ll]]Oo][Rr][Aa]/g, 'lkw-walter');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Gg][Mm][Zz]/g, 'lkw-walter');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]igros/g, 'lkw-walter');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Kk] *[Kk]iosk/g, 'lkw-walter');
 
     // hashtags
 
@@ -88,7 +81,7 @@ function customize() {
     document.body.innerHTML = document.body.innerHTML.replace(/Mickey.Mouse/g, 'Severin Baer');
 
     document.body.innerHTML = document.body.innerHTML.replace(/vc[0-9][0-9][0-9][0-9]\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria.studer\&amp\;size\=M/g, 'tse1.mm.bing.net/th?&amp;id=OIP.Mb31cedf17534037f30c963120cb49131o1&amp;w=140&amp;h=169&amp;c=0&amp;pid=1.9&amp;rs=0&amp;p=0&amp;r=0');
-    document.body.innerHTML = document.body.innerHTML.replace(/Maria.Studer/g, 'Nils Planzer');
+    document.body.innerHTML = document.body.innerHTML.replace(/Maria.Studer/g, 'Nils lkw-walter');
 
     // Content TimeLine
     if ($('#pageTitle').text().trim() === "Timeline") {
@@ -98,7 +91,7 @@ function customize() {
 
         // images on content
         document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881808960000000/g, 'https://tse1.mm.bing.net/th?&amp;id=OIP.M3573c5ce8d293ec85dfccfe23148b5e2o0&amp;w=315&amp;h=200&amp;c=0&amp;pid=1.9&amp;rs=0&amp;p=0&amp;r=0');
-        document.body.innerHTML = document.body.innerHTML.replace(/75 Jahre Planzer!/g, 'Nez Rouge campaign');
+        document.body.innerHTML = document.body.innerHTML.replace(/75 Jahre lkw-walter!/g, 'Nez Rouge campaign');
         document.body.innerHTML = document.body.innerHTML.replace(/Happy Birthday.+Laufenden\./g, 'Last year, 8700 volunteers made 14700 trips to safely return 31000 people to their homes.The prevention campaign for  increased road traffic safety is more popular than ever.Thanks to this, a fair number of traffic accidents could already be prevented.');
         
         document.body.innerHTML = document.body.innerHTML.replace(/Tochtergesellschaft.+das Fitnessunternehmen Inline\/Injoy/g, 'Payment Information');
