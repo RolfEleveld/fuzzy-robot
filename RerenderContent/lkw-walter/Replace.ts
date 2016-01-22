@@ -59,14 +59,14 @@ function customize() {
     // replace menu background    
     
     //replace logo
-    $('#mpsnow-Logo > img').attr('src', "http://lkw-walterwebsitestorage.blob.core.windows.net/files/Content/images/logo_lkw-walter.png");
+    $('#mpsnow-Logo > img').attr('src', "http://www.lkw-walter.ch/-/m/images/lkw/allgemein/lkw-walter-logo-slogan.ashx?h=128&la=de&w=459&nocompress=0");
 
     //replace words
-    document.body.innerHTML = document.body.innerHTML.replace(/[mM]ettler.[tT]oledo/g, 'lkw-walter');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Vv][Aa][Ll]]Oo][Rr][Aa]/g, 'lkw-walter');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Gg][Mm][Zz]/g, 'lkw-walter');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]igros/g, 'lkw-walter');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Kk] *[Kk]iosk/g, 'lkw-walter');
+    document.body.innerHTML = document.body.innerHTML.replace(/[mM]ettler.[tT]oledo/g, 'LKW-WALTER');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Vv][Aa][Ll]]Oo][Rr][Aa]/g, 'LKW-WALTER');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Gg][Mm][Zz]/g, 'LKW-WALTER');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]igros/g, 'LKW-WALTER');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Kk] *[Kk]iosk/g, 'LKW-WALTER');
 
     // hashtags
 
@@ -81,7 +81,7 @@ function customize() {
     document.body.innerHTML = document.body.innerHTML.replace(/Mickey.Mouse/g, 'Severin Baer');
 
     document.body.innerHTML = document.body.innerHTML.replace(/vc[0-9][0-9][0-9][0-9]\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria.studer\&amp\;size\=M/g, 'tse1.mm.bing.net/th?&amp;id=OIP.Mb31cedf17534037f30c963120cb49131o1&amp;w=140&amp;h=169&amp;c=0&amp;pid=1.9&amp;rs=0&amp;p=0&amp;r=0');
-    document.body.innerHTML = document.body.innerHTML.replace(/Maria.Studer/g, 'Nils lkw-walter');
+    document.body.innerHTML = document.body.innerHTML.replace(/Maria.Studer/g, 'Nils LKW-WALTER');
 
     // Content TimeLine
     if ($('#pageTitle').text().trim() === "Timeline") {
@@ -91,7 +91,7 @@ function customize() {
 
         // images on content
         document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881808960000000/g, 'https://tse1.mm.bing.net/th?&amp;id=OIP.M3573c5ce8d293ec85dfccfe23148b5e2o0&amp;w=315&amp;h=200&amp;c=0&amp;pid=1.9&amp;rs=0&amp;p=0&amp;r=0');
-        document.body.innerHTML = document.body.innerHTML.replace(/75 Jahre lkw-walter!/g, 'Nez Rouge campaign');
+        document.body.innerHTML = document.body.innerHTML.replace(/75 Jahre LKW-WALTER!/g, 'Nez Rouge campaign');
         document.body.innerHTML = document.body.innerHTML.replace(/Happy Birthday.+Laufenden\./g, 'Last year, 8700 volunteers made 14700 trips to safely return 31000 people to their homes.The prevention campaign for  increased road traffic safety is more popular than ever.Thanks to this, a fair number of traffic accidents could already be prevented.');
         
         document.body.innerHTML = document.body.innerHTML.replace(/Tochtergesellschaft.+das Fitnessunternehmen Inline\/Injoy/g, 'Payment Information');
