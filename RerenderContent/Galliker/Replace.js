@@ -1,9 +1,6 @@
-/// <reference path="jquery.d.ts"/>
-/*
-// depends on https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/627b6c158b73494c803f36fc2fe00ad75faa8fde/jquery/jquery.d.ts
 //Load this script
-$.getScript("./Replace.js")
-*/
+//$.getScript("./Replace.js")
+
 function firstfrequencies() {
     // set frequency bar heights
     $('span.mp-crwpRangeHistogramBar')[0].style.height = "calc(45% - 2px)";
@@ -32,35 +29,44 @@ function secondfrequencies() {
 }
 function customize() {
     //replace menu icons
-
+    $('.mpsnow-TopNavigationNode').toggleClass('selected')
+    
     //replace page icon
-    document.body.innerHTML = document.body.innerHTML.replace(/\/_layouts\/15\/images\/Colygon\.MatchPoint\.Snow\/favicon\.ico/g, "http://www.galliker.com/favicon.ico");
+    document.head.innerHTML = document.head.innerHTML.replace(/\/_layouts\/15\/images\/Colygon\.MatchPoint\.Snow\/favicon\.ico/g, "http://www.galliker.com/favicon.ico");
     //replace colors:
     for (var count = 0; count < document.styleSheets.length; count++) {
-        //Accent color        
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(255, 134, 31\)/g, '#ed720b');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(237, 114, 11\)/g, '#ed720b');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(255, 204, 153\)/g, '#fcfcfc');
         //Fonts
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/"Segoe UI Light",/g, '');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/"Segoe UI",/g, '');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/"Lucida Grande",/g, '');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/Tahoma,/g, '');
         //document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/Helvetica,Arial,sans-serif/g, 'Helvetica, Arial, sans-serif');
+
         //Sidebar
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-webPartZoneRightSection[ \t\n\r]*{[ \t\n\r]*background-color[^}]+}/g, 'mpsnow-webPartZoneRightSection{background-color:#780121}');
-        //Menu color
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(216, 216, 216\)/g, '#fcfcfc');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ms-core-overlay[ \t\n\r]*{[ \t\n\r]*background-color[^}]+}/g, 'ms-core-overlay{background-color:#fcfcfc;}');        
+
+        //Accent color        
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(255, 134, 31\)/g, '#780121');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(237, 114, 11\)/g, '#902f49');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(255, 108, 10\)/g, '#902f49');
+
+        //Sidebar Menu color
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(216, 216, 216\)/g, '#f6f6f6');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(255, 204, 153\)/g, '#f6f6f6');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ffcc99/g, 'f6f6f6');
+        
+        //background color
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ms-core-overlay[ \t\n\r]*{[ \t\n\r]*background-color[^}]+}/g, 'ms-core-overlay{background-color:#fff;}');
     }
 
     //CSS updates
     document.styleSheets[0].cssText = document.styleSheets[0].cssText + "\n";
 
     //replace logo
-    $('div.ms-breadcrumb-top').attr('style', "background-color:#780121;");
+    $('#mpsnow-Logo > img').attr('style', "display:none");
+    $('div.ms-breadcrumb-top').attr('style', "background-image: url('http://www.galliker.com/design/galliker2015302/custom/logo.png');background-position-x:27.5px; background-size:contain;background-repeat:no-repeat;background-color:#780121");
     $('#mpsnow-currentUser-Link').attr('style', "color:white;");
-    $('#mpsnow-Logo > img').attr('src', "http://www.galliker.com/design/galliker2015302/custom/logo.png");
+    $('#mpsnow-currentUser-Link').attr('style', "color:white;");
 
     //replace words
     document.body.innerHTML = document.body.innerHTML.replace(/gmz/g, 'Beck').replace(/GMZ/g, 'Galliker AG');
@@ -91,7 +97,7 @@ function customize() {
     document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881805010000000/g, 'http://www.galliker.com/media/EB9EC3CD-155D-C846-01211F68F99E44D0/Visualisierung_Projekt_Plattform_Landquart-n.jpg');
     
     document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881812330000000"/g, '"http://www.galliker.com/media/EB1FDD96-155D-C846-0113E3A996D9A27A/Kombinierter_Verkehr-n.jpg"');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635747988240000000"/g, '"https://tse1.mm.bing.net/th?&amp;id=OIP.M16ee9caa0b6ff11ef5f18e6256534fe6o0&w=800&h=200&c=0&pid=1.9&rs=0&p=0&r=0"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635747988240000000"/g, '"http://www.galliker.com/media/B7BAC62A-DC1D-7268-36798B0C462AE0D8/Banner_news-t.jpg"');
     
     if ($('#pageTitle').text().trim() === "Timeline") {
         firstfrequencies();
@@ -118,6 +124,12 @@ function customize() {
                 break;
         }
     });
+    
+    // reiterate content colors
+    for (var count = 0; count < document.styleSheets.length; count++) {
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(216, 216, 216\)/g, '#f6f6f6');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(255, 204, 153\)/g, '#f6f6f6');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ffcc99/g, 'f6f6f6');
+    } 
 }
 customize();
-//# sourceMappingURL=Replace.js.map
