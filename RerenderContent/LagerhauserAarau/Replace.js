@@ -32,7 +32,7 @@ function customize() {
     //$('.mpsnow-TopNavigationNode').toggleClass('selected')
     
     //replace page icon
-    document.head.innerHTML = document.head.innerHTML.replace(/\/_layouts\/15\/images\/Colygon\.MatchPoint\.Snow\/favicon\.ico/g, "http://www.la-aarau.ch/favicon.ico");
+    document.head.innerHTML = document.head.innerHTML.replace(/\/_layouts\/15\/images\/Colygon\.MatchPoint\.Snow\/favicon\.ico/g, "http://www.ldc-holding.ch/favicon.ico");
     //replace colors:
     for (var count = 0; count < document.styleSheets.length; count++) {
         //Fonts
@@ -67,59 +67,97 @@ function customize() {
 
     //replace logo
     $('#mpsnow-Logo > img').attr('style', "display:none");
-    $('div.ms-breadcrumb-top').attr('style', "background-image: url('http://www.la-aarau.ch/fileadmin/templates/gui/_LOGO_LAG_NEU.gif');background-position-x:20px;background-size:contain;background-repeat:no-repeat;background-color:#f8eabc");
+    $('div.ms-breadcrumb-top').attr('style', "background-image: url('http://www.ldc-holding.ch/fileadmin/templates/gui/_LOGO_LAC.gif');background-position-x:20px;background-size:contain;background-repeat:no-repeat;background-color:#f8eabc");
     $('#mpsnow-currentUser-Link').attr('style', "color:#000;");
 
     // left sidebar menu:
     $("#sideNavBox").attr("style", "background-color:rgb(255, 201, 14);")
-    
-    //replace words
-    document.body.innerHTML = document.body.innerHTML.replace(/gmz/g, 'Beck').replace(/GMZ/g, 'Lagerhäuser Aarau AG');
-    document.body.innerHTML = document.body.innerHTML.replace(/migros/g, 'Lagerhäuser Aarau AG');
-    
+     
     // Workspaces
-    document.body.innerHTML = document.body.innerHTML.replace(/Community/g, 'On The Road');
+    document.body.innerHTML = document.body.innerHTML.replace(/Community/g, 'Standorte');
     
-    //Setting people images
-    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'https://tse1.mm.bing.net/th?&amp;id=OIP.M07824d5e7a11559fd9179965038e4469o1&w=130&h=176&c=0&pid=1.9&rs=0&p=0&r=0');
-    document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Rolf Lagerhäuser Aarau');
-    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'https://tse1.mm.bing.net/th?&amp;id=OIP.M389cecd17b4c9a03b3732954586694d8o1&w=135&h=184&c=0&pid=1.9&rs=0&p=0&r=0');
-    document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Peter Lagerhäuser Aarau');
-    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/005/06a/291/1968431.jpg');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Fabian Studer');
-    document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Ester Studer');
-
     // Content TimeLine
-    document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635884501730000000/g, 'http://www.la-aarau.ch/media/138BBF4D-155D-C846-015DA70D9C91A930/Visualisierung_LC4-n.jpg');
-    document.body.innerHTML = document.body.innerHTML.replace(/Tanzwerk101/g, 'Baustart zweite Etappe Logistikcenter 4');
+    document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635884501730000000/g, 'http://www.ldc-holding.ch/typo3temp/pics/77cb1becd0.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/Tanzwerk101/g, 'Abadía Retuerta LeDomaine');
     document.body.innerHTML = document.body.innerHTML.replace(/Das finde ich super, bin dabei/g, 'Class luctus. Ad cras per nisl tempor lacinia duis.');
     document.body.innerHTML = document.body.innerHTML.replace(/Der Tag der offenen Tanztür steht an - ein Tanzfest für Jedermann./g, 'Quis accumsan per porta hac.');
-    document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881808960000000/g, 'http://www.la-aarau.ch/media/9C249D5D-155D-C846-01D8FE9B5EBDB3B5/Apotheke_2-n.jpg');
-    document.body.innerHTML = document.body.innerHTML.replace(/75.Jahre.Lagerhäuser Aarau AG./g, 'Neu: Temperaturgeführte Transporte von Kleinsendungen ');
+    document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881808960000000/g, 'http://www.ldc-holding.ch/typo3temp/pics/c1523fc405.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/>[ \t\n\r]*75.Jahre[^<]+</g, '>Chinesischer Ansturm auf Bordeaux<');
     document.body.innerHTML = document.body.innerHTML.replace(/>[ \t\n\r]*Happy Birthday[^<]+</g, '>Leo justo. Quis accumsan per porta hac. Porttitor iaculis viverra condimentum ridiculus nascetur Velit velit est euismod orci porta libero commodo dignissim nascetur convallis vulputate, facilisi tellus metus suspendisse pellentesque maecenas convallis, per. Class luctus. Ad cras per nisl tempor lacinia duis.<');
-    document.body.innerHTML = document.body.innerHTML.replace(/Lagerhäuser Aarau AG-Tochtergesellschaft übernimmt das Fitnessunternehmen Inline\/Injoy/g, 'Neue Lagerhäuser Aarau Verteilplattform für die Südostschweiz');
-    document.body.innerHTML = document.body.innerHTML.replace(/>Die Lagerhäuser Aarau AG-Tochtergesellschaft[^<]+</g, '>Imperdiet hac volutpat. Tempor neque at dui libero lobortis congue a dictum conubia natoque malesuada non eget. Urna pede integer platea ligula bibendum lobortis congue nonummy, lacinia viverra interdum ac dis class auctor nam. Feugiat magna ultrices a. Sit ornare.<');
-    document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881805010000000/g, 'http://www.la-aarau.ch/media/EB9EC3CD-155D-C846-01211F68F99E44D0/Visualisierung_Projekt_Plattform_Landquart-n.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/>[^<]+Tochtergesellschaft übernimmt das Fitnessunternehmen Inline\/Injoy[ \t\n\r]*</g, '>Seresin: 20 Jahre biodynamische Weinkultur<');
+    document.body.innerHTML = document.body.innerHTML.replace(/>Die[^<]+-Tochtergesellschaft[^<]+</g, '>Imperdiet hac volutpat. Tempor neque at dui libero lobortis congue a dictum conubia natoque malesuada non eget. Urna pede integer platea ligula bibendum lobortis congue nonummy, lacinia viverra interdum ac dis class auctor nam. Feugiat magna ultrices a. Sit ornare.<');
+    document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881805010000000/g, 'http://www.ldc-holding.ch/typo3temp/pics/f294bd9f3e.jpg');
     
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881812330000000"/g, '"http://www.la-aarau.ch/media/EB1FDD96-155D-C846-0113E3A996D9A27A/Kombinierter_Verkehr-n.jpg"');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635747988240000000"/g, '"http://www.la-aarau.ch/media/B7BAC62A-DC1D-7268-36798B0C462AE0D8/Banner_news-t.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881812330000000"/g, '"http://www.ldc-holding.ch/typo3temp/pics/0c9dbef1b4.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635747988240000000"/g, '"http://www.ldc-holding.ch/typo3temp/pics/5c9e645c57.jpg"');
     
     if ($('#pageTitle').text().trim() === "Timeline") {
         firstfrequencies();
-        // images on content
+        // images on content weinkellerei
+        $('div.ms-breadcrumb-top').attr('style', "background-image: url('http://www.ldc-holding.ch/fileadmin/templates/gui/_LOGO_WKA.gif');background-position-x:20px;background-size:contain;background-repeat:no-repeat;background-color:#f8eabc");
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/9c53cfd897.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Ulrich Stucky');
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/6dd0ce469e.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Konrad Duttwiler');
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/02cd7670f1.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Beat Bolzhauser');
+        document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Stéphane Meyer');
+
+        document.body.innerHTML = document.body.innerHTML.replace(/[gG][mM][zZ]/g, 'Weinkellereien Aarau');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Mm]igros/g, 'Weinkellereien Aarau AG');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Kk ]+iosk/g, 'Weinkellereien Aarau AG');
     }
     // Workspaces
     if ($('#pageTitle').text().trim() === "Workspaces") {
         firstfrequencies();
-        secondfrequencies();
+        // image and content Lagerhaus Aarau
+        $('div.ms-breadcrumb-top').attr('style', "background-image: url('http://www.ldc-holding.ch/fileadmin/templates/gui/_LOGO_LAG_NEU.gif');background-position-x:20px;background-size:contain;background-repeat:no-repeat;background-color:#f8eabc");
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/02cd7670f1.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Beat Bolzhauser');
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/64a57a9f5e.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Hanswerner Kaelin');
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/02cd7670f1.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Beat Bolzhauser');
+        document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Stéphane Meyer');
+
+        document.body.innerHTML = document.body.innerHTML.replace(/[gG][mM][zZ]/g, 'Lagerhäuser Aarau');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Mm]igros/g, 'Lagerhäuser Aarau AG');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Kk ]+iosk/g, 'Lagerhäuser Aarau AG');
     }
     if ($('#pageTitle').text().trim() === "Content") {
         firstfrequencies();
         secondfrequencies();
+        // images and content oel pool
+        $('div.ms-breadcrumb-top').attr('style', "background-image: url('http://www.ldc-holding.ch/fileadmin/templates/gui/_LOGO_Oelpool.gif');background-position-x:20px;background-size:contain;background-repeat:no-repeat;background-color:#f8eabc");
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/da86ae2df9.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Daniel Sieber');
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/6dd0ce469e.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Konrad Duttwiler');
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/02cd7670f1.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Beat Bolzhauser');
+        document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Stéphane Meyer');
+
+        document.body.innerHTML = document.body.innerHTML.replace(/[gG][mM][zZ]/g, 'Oel-Pool');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Mm]igros/g, 'Oel-Pool AG');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Kk ]+iosk/g, 'Oel-Pool AG');
     }
     if ($('#pageTitle').text().trim() === "People") {
+          
     }
     if ($('#pageTitle').text().trim() == "News") {
+        // images and content Cotra autotransport
+        $('div.ms-breadcrumb-top').attr('style', "background-image: url('http://www.ldc-holding.ch/fileadmin/templates/gui/_LOGO_Cotra.gif');background-position-x:20px;background-size:contain;background-repeat:no-repeat;background-color:#f8eabc");
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/8483abc7ec.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Martin Furrer');
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/6dd0ce469e.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Konrad Duttwiler');
+        document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/02cd7670f1.png');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Beat Bolzhauser');
+        document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Stéphane Meyer');
+
+        document.body.innerHTML = document.body.innerHTML.replace(/[gG][mM][zZ]/g, 'Cotra Autotransport');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Mm]igros/g, 'Cotra Autotransport AG');
+        document.body.innerHTML = document.body.innerHTML.replace(/[Kk ]+iosk/g, 'Cotra Autotransport AG');
     }
     //Potal?
     $("div.slick-track img").each(function (index) {
@@ -130,6 +168,20 @@ function customize() {
         }
     });
     
+    //Setting people images
+    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/c6268cb8dc.png');
+    document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Stéphane Meyer');
+    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/6dd0ce469e.png');
+    document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Konrad Duttwiler');
+    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, 'http://www.ldc-holding.ch/typo3temp/GB/02cd7670f1.png');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Beat Bolzhauser');
+    document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Martin Furrer');
+
+    //replace words
+    document.body.innerHTML = document.body.innerHTML.replace(/[gG][mM][zZ]/g, 'Lagerhäuser der Centralschweiz');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]igros/g, 'Lagerhäuser der Centralschweiz AG');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Kk ]+iosk/g, 'Lagerhäuser der Centralschweiz AG');
+
     // reiterate content colors
     for (var count = 0; count < document.styleSheets.length; count++) {
         // document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(216, 216, 216\)/g, '#f6f6f6');
