@@ -55,7 +55,10 @@ function customize() {
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode[ \t\n\r]*{([^}]*)background-color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode{\\$1\\$2;background-color:#000;color:#999;}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#s4-titlerow[ \t\n\r]*{([^}]*)border-bottom-color[^;}]+([^}]*)}/g, '#s4-titlerow{\\$1\\$2;border-bottom-color:#000;}');
 
-        //document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(216, 216, 216\)/g, '#F3ECE6');
+        // Text on menu
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(85, 85, 85\)/g, '#999');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(67, 67, 67\)/g, '#999');
+        // Background on menu
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(102, 102, 102\)/g, '#000');
     }
 
@@ -74,25 +77,27 @@ function customize() {
     // Workspaces
     document.body.innerHTML = document.body.innerHTML.replace(/Community/g, 'On The Road');
     //Setting people images
-    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'http://www.implenia.com/bilder/team_uImplenia.jpg');
-    document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Urs Implenia');
-    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'http://www.implenia.com/bilder/team_tmarizzi.jpg');
-    document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Thomas Marizzi');
-    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, 'http://www.implenia.com/bilder/team_uhirnschall.jpg');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Uwe Hirnschall');
-    document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Thomas Kanis');
+    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'http://www.implenia.com/files/media/s160x0/28ea4c7d63ebc4945b3fabeb9396f17c/Implenia-Adrian-Wyss.png');
+    document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Adryan Wyss');
+    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'http://www.implenia.com/files/media/s160x0/bf689068b51aad17e764ccc26a4a1d8f/Implenia-joerg-kaiser.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Jörg Kaiser');
+    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, 'http://web.fhnw.ch/plattformen/wirtschaftsforum/referenten/ImpleniaAntonAffentranger.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Anton Affentranger');
+    document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Guido Schmidt');
 
     // images on content
-    document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635884501730000000/g, 'http://www.implenia.com/bilder/Implenia_mauren.jpg');
-    document.body.innerHTML = document.body.innerHTML.replace(/Tanzwerk101/g, 'E.L.V.I.S AG');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635884501730000000"/g, '"http://e2.marco.ch/publish/implenia/289_6924/HUM.png"');
+    document.body.innerHTML = document.body.innerHTML.replace(/Tanzwerk101/g, 'Board');
     document.body.innerHTML = document.body.innerHTML.replace(/Das finde ich super, bin dabei/g, 'Class luctus. Ad cras per nisl tempor lacinia duis.');
     document.body.innerHTML = document.body.innerHTML.replace(/Der Tag der offenen Tanztür steht an - ein Tanzfest für Jedermann./g, 'Quis accumsan per porta hac.');
-    document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881808960000000/g, 'http://www.implenia.com/bilder/stimmungsbild_3.jpg');
-    document.body.innerHTML = document.body.innerHTML.replace(/75.Jahre.Implenia./g, 'Wir möchten was bewegen');
-    document.body.innerHTML = document.body.innerHTML.replace(/>Happy Birthday[^<]+</g, '>Leo justo. Quis accumsan per porta hac. Porttitor iaculis viverra condimentum ridiculus nascetur Velit velit est euismod orci porta libero commodo dignissim nascetur convallis vulputate, facilisi tellus metus suspendisse pellentesque maecenas convallis, per. Class luctus. Ad cras per nisl tempor lacinia duis.<');
-    document.body.innerHTML = document.body.innerHTML.replace(/Implenia-Tochtergesellschaft übernimmt das Fitnessunternehmen Inline\/Injoy/g, '4x Volvo FH 500 EURO 6');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881808960000000"/g, '"http://e2.marco.ch/publish/implenia/289_6858/20160129_Aussenansicht_gross.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/75.Jahre.Implenia./g, 'New Projects');
+    document.body.innerHTML = document.body.innerHTML.replace(/>[^<]*Happy Birthday[^<]*</g, '>Leo justo. Quis accumsan per porta hac. Porttitor iaculis viverra condimentum ridiculus nascetur Velit velit est euismod orci porta libero commodo dignissim nascetur convallis vulputate, facilisi tellus metus suspendisse pellentesque maecenas convallis, per. Class luctus. Ad cras per nisl tempor lacinia duis.<');
+    document.body.innerHTML = document.body.innerHTML.replace(/Implenia-Tochtergesellschaft übernimmt das Fitnessunternehmen Inline\/Injoy/g, 'Stuttgart - Ulm');
     document.body.innerHTML = document.body.innerHTML.replace(/>Die Implenia-Tochtergesellschaft[^<]+</g, '>Imperdiet hac volutpat. Tempor neque at dui libero lobortis congue a dictum conubia natoque malesuada non eget. Urna pede integer platea ligula bibendum lobortis congue nonummy, lacinia viverra interdum ac dis class auctor nam. Feugiat magna ultrices a. Sit ornare.<');
-    document.body.innerHTML = document.body.innerHTML.replace(/http[^"]+635881805010000000/g, 'http://www.implenia.com/files/media/s1440x0/d2f01c4e53778888dc1879313c828c1b/implenia-startseite-quadro-zuerich.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881805010000000"/g, '"http://e2.marco.ch/publish/implenia/289_6781/20120509_Tunnelportal_Wendlingen_klein.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635747988240000000"/g, '"http://e2.marco.ch/publish/implenia/289_3014/Grundsteinlegung8.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881812330000000"/g, '"http://www.implenia.com/files/media/s0x876/aeae9fd9e4bd878f82fbc95dd7102861/aal.jpg"');
 
     // Content TimeLine
     if ($('#pageTitle').text().trim() === "Timeline") {
@@ -119,6 +124,13 @@ function customize() {
                 break;
         }
     });
+    // update lines
+    for (var count = 0; count < document.styleSheets.length; count++) {
+    
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#sideNavBox[ \t\n\r]*{([^}]*)border-left[^;}]+([^}]*)}/g, '#sideNavBox{\\$1\\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#sideNavBox[ \t\n\r]*{([^}]*)border-right[^;}]+([^}]*)}/g, '#sideNavBox{\\$1\\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#s4-titlerow[ \t\n\r]*{([^}]*)border-bottom-color[^;}]+([^}]*)}/g, '#s4-titlerow{\\$1\\$2;border-bottom-color:#000;}');
+    }    
 }
 customize();
 //# sourceMappingURL=Replace.js.map
