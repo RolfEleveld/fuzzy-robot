@@ -79,7 +79,7 @@ function customize() {
     document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Andreas Böhm');
     document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Denis Zosso');
 
- //TODO::
+ //TODO:: pull from need on liebherr site
     // images on content
     document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635884501730000000"/g, '"http://e2.marco.ch/publish/implenia/289_6924/HUM.png"');
     document.body.innerHTML = document.body.innerHTML.replace(/Tanzwerk101/g, 'Board');
