@@ -81,18 +81,18 @@ function customize() {
 
  //TODO:: pull from need on liebherr site
     // images on content
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635884501730000000"/g, '"http://e2.marco.ch/publish/implenia/289_6924/HUM.png"');
-    document.body.innerHTML = document.body.innerHTML.replace(/Tanzwerk101/g, 'Board');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635884501730000000"/g, '"http://www.liebherr.com/shared/media/corporate/news/news-2016/02/11/liebherr-news-national-apprenticeship_img_310.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/Tanzwerk101/g, 'Awards');
     document.body.innerHTML = document.body.innerHTML.replace(/Das finde ich super, bin dabei/g, 'Class luctus. Ad cras per nisl tempor lacinia duis.');
     document.body.innerHTML = document.body.innerHTML.replace(/Der Tag der offenen Tanztür steht an - ein Tanzfest für Jedermann./g, 'Quis accumsan per porta hac.');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881808960000000"/g, '"http://e2.marco.ch/publish/implenia/289_6858/20160129_Aussenansicht_gross.jpg"');
-    document.body.innerHTML = document.body.innerHTML.replace(/75.Jahre.Implenia./g, 'New Projects');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881808960000000"/g, '"http://www.liebherr.com/shared/media/corporate/news/news-2016/02/09/liebherr-clean-sky2-itd-launch-review-participants-nov2015-72dpi_img_310.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/75.Jahre.Liebherr./g, 'Events');
     document.body.innerHTML = document.body.innerHTML.replace(/>[^<]*Happy Birthday[^<]*</g, '>Leo justo. Quis accumsan per porta hac. Porttitor iaculis viverra condimentum ridiculus nascetur Velit velit est euismod orci porta libero commodo dignissim nascetur convallis vulputate, facilisi tellus metus suspendisse pellentesque maecenas convallis, per. Class luctus. Ad cras per nisl tempor lacinia duis.<');
-    document.body.innerHTML = document.body.innerHTML.replace(/Implenia-Tochtergesellschaft übernimmt das Fitnessunternehmen Inline\/Injoy/g, 'Stuttgart - Ulm');
-    document.body.innerHTML = document.body.innerHTML.replace(/>Die Implenia-Tochtergesellschaft[^<]+</g, '>Imperdiet hac volutpat. Tempor neque at dui libero lobortis congue a dictum conubia natoque malesuada non eget. Urna pede integer platea ligula bibendum lobortis congue nonummy, lacinia viverra interdum ac dis class auctor nam. Feugiat magna ultrices a. Sit ornare.<');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881805010000000"/g, '"http://e2.marco.ch/publish/implenia/289_6781/20120509_Tunnelportal_Wendlingen_klein.jpg"');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635747988240000000"/g, '"http://e2.marco.ch/publish/implenia/289_3014/Grundsteinlegung8.jpg"');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881812330000000"/g, '"http://www.implenia.com/files/media/s0x876/aeae9fd9e4bd878f82fbc95dd7102861/aal.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/Liebherr-Tochtergesellschaft übernimmt das Fitnessunternehmen Inline\/Injoy/g, 'Material');
+    document.body.innerHTML = document.body.innerHTML.replace(/>Die Liebherr-Tochtergesellschaft[^<]+</g, '>Imperdiet hac volutpat. Tempor neque at dui libero lobortis congue a dictum conubia natoque malesuada non eget. Urna pede integer platea ligula bibendum lobortis congue nonummy, lacinia viverra interdum ac dis class auctor nam. Feugiat magna ultrices a. Sit ornare.<');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881805010000000"/g, '"http://www.liebherr.com/shared/media/corporate/news/news-2016/02/08/liebherr-lr-11000-hanchang-handover2-72dpi_img_220.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635747988240000000"/g, '"http://www.liebherr.com/shared/media/corporate/news/news-2016/02/09/liebherr-clean-sky2-itd-launch-review-participants-nov2015_img_710.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881812330000000"/g, '"http://www.liebherr.com/shared/media/corporate/news/news-2016/01/27/gesch%C3%A4ftsentwicklung/liebherr-bauma-2013-72dpi_img_220.jpg"');
 
     // Content TimeLine
     if ($('#pageTitle').text().trim() === "Timeline") {
