@@ -70,28 +70,27 @@ function customize() {
     // hashtags
     // Workspaces
     //Setting people images
-    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'http://allgemeinebauzeitung.de/media/temp/csm_pv_18194_-_1sp_34378bae6d.jpg');
-    document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Stefan Heissler');
-    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, '');
-    document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Uwe Rechtsteiner');
-    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, '');
-    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Andreas Böhm');
-    document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Denis Zosso');
+    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5caleksandar\.toskovic\&amp\;size\=M/g, 'http://www.g-21.ch/2011/images/portrait_blehaut.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/Aleksandar Toskovic/g, 'Etienne Bléhaut');
+    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmickey\.mouse\&amp\;size\=M/g, 'http://smcompleterestoration.com/wp-content/uploads/2012/11/unknown-person.png');
+    document.body.innerHTML = document.body.innerHTML.replace(/Mickey Mouse/g, 'Antoine Rérolle');
+    document.body.innerHTML = document.body.innerHTML.replace(/https...vc[0-9]{4}\.virtualcorp\.ch\/snow\/_layouts\/15\/userphoto\.aspx\?accountName\=i\%3a0\%23\.w\%7cvirtualcorp\%5cmaria\.studer\&amp\;size\=M/g, 'https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/000/098/3fb/1116856.jpg');
+    document.body.innerHTML = document.body.innerHTML.replace(/[Mm]aria.[Ss]tuder/g, 'Pascal Bärtschi');
+    document.body.innerHTML = document.body.innerHTML.replace(/Ralph.Keller/g, 'Jacky Gillmann');
 
- //TODO:: pull from need on Losinger-Marazzi site
     // images on content
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635884501730000000"/g, '"http://www.losinger-marazzi.ch/shared/media/corporate/news/news-2016/02/11/Losinger-Marazzi-news-national-apprenticeship_img_310.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635884501730000000"/g, '"http://www.losinger-marazzi.ch/wp-content/uploads/WankdorfCity.jpg"');
     document.body.innerHTML = document.body.innerHTML.replace(/Tanzwerk101/g, 'Awards');
     document.body.innerHTML = document.body.innerHTML.replace(/Das finde ich super, bin dabei/g, 'Class luctus. Ad cras per nisl tempor lacinia duis.');
     document.body.innerHTML = document.body.innerHTML.replace(/Der Tag der offenen Tanztür steht an - ein Tanzfest für Jedermann./g, 'Quis accumsan per porta hac.');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881808960000000"/g, '"http://www.losinger-marazzi.ch/shared/media/corporate/news/news-2016/02/09/Losinger-Marazzi-clean-sky2-itd-launch-review-participants-nov2015-72dpi_img_310.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881808960000000"/g, '"http://www.losinger-marazzi.ch/wp-content/uploads/BIM.jpg"');
     document.body.innerHTML = document.body.innerHTML.replace(/75.Jahre.Losinger-Marazzi./g, 'Events');
     document.body.innerHTML = document.body.innerHTML.replace(/>[^<]*Happy Birthday[^<]*</g, '>Leo justo. Quis accumsan per porta hac. Porttitor iaculis viverra condimentum ridiculus nascetur Velit velit est euismod orci porta libero commodo dignissim nascetur convallis vulputate, facilisi tellus metus suspendisse pellentesque maecenas convallis, per. Class luctus. Ad cras per nisl tempor lacinia duis.<');
     document.body.innerHTML = document.body.innerHTML.replace(/Losinger-Marazzi-Tochtergesellschaft übernimmt das Fitnessunternehmen Inline\/Injoy/g, 'Material');
     document.body.innerHTML = document.body.innerHTML.replace(/>Die Losinger-Marazzi-Tochtergesellschaft[^<]+</g, '>Imperdiet hac volutpat. Tempor neque at dui libero lobortis congue a dictum conubia natoque malesuada non eget. Urna pede integer platea ligula bibendum lobortis congue nonummy, lacinia viverra interdum ac dis class auctor nam. Feugiat magna ultrices a. Sit ornare.<');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881805010000000"/g, '"http://www.losinger-marazzi.ch/shared/media/corporate/news/news-2016/02/08/Losinger-Marazzi-lr-11000-hanchang-handover2-72dpi_img_220.jpg"');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635747988240000000"/g, '"http://www.losinger-marazzi.ch/shared/media/corporate/news/news-2016/02/09/Losinger-Marazzi-clean-sky2-itd-launch-review-participants-nov2015_img_710.jpg"');
-    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881812330000000"/g, '"http://www.losinger-marazzi.ch/shared/media/corporate/news/news-2016/01/27/gesch%C3%A4ftsentwicklung/Losinger-Marazzi-bauma-2013-72dpi_img_220.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881805010000000"/g, '"http://www.losinger-marazzi.ch/wp-content/uploads/new_2000_watts.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635747988240000000"/g, '"http://www.losinger-marazzi.ch/wp-content/uploads/plan-les-ouates.jpg"');
+    document.body.innerHTML = document.body.innerHTML.replace(/"[^"]+635881812330000000"/g, '"http://www.losinger-marazzi.ch/wp-content/uploads/news-HWW-Living-Science-hd.jpg"');
 
     // Content TimeLine
     if ($('#pageTitle').text().trim() === "Timeline") {
