@@ -146,11 +146,5 @@ function customize() {
                 break;
         }
     });
-    //replace colors:
-    for (var count = 0; count < document.styleSheets.length; count++) {
-        // Portal highlights:
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/background-color:[ \t\n\r]*#ffcc99[^;]/g, 'background-color:#f1f1f1');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/rgb\(255,[ \t\n\r]*204,[ \t\n\r]*153\)/g, '#f1f1f1');
-    }
 }
 customize();
