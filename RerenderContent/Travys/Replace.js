@@ -1,0 +1,261 @@
+/*
+//Load this script
+// use https://vc0095.virtualcorp.ch/snow/SitePages/Timeline.aspx
+$.getScript("./Replace.js")
+*/
+var look = {
+    font: 'helvetica,arial,sans-serif;',
+    icon: 'http://www.travys.ch/favicon.ico',
+    logo: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.08&right_x=0.4&bottom_y=0.48&img=http://www.travys.ch/images/stories/banner_bg/Home_accueil.png',
+    accents: '#bd0c19',
+    menu: 'inverted', //active, inactive, inverted
+    selectedMenuBackground: '#bd0c19',
+    selectedMenuColor: '#fff',
+    passiveMenuBackground: '#fff',
+    passiveMenuColor: '#bd0c19',
+    menuSeparator: '#fff',
+    RightBarBackground: '#bd0c19', // also buttons
+    RightBarColor: '#fff', // also button txt
+    LeftBarBackground: '#fff',
+    LeftBarColor: '#4d4d4d',
+    LeftBarChartColor: '#333333',
+    StreamBackground: '#ddd',
+    StreamAltBackground: '#ddd',
+    StreamColor: '#5f6565',
+    Curve: 0
+};
+//http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=1&right_x=0&bottom_y=1&img=
+var people = [
+    { oldname: 'Maria.Studer', newname: 'Yvan Wenger', image: 'https://media.licdn.com/media/p/1/000/11a/0e8/3fe9d53.jpg' }, // logged in user
+    { oldname: 'Christoph.Enderli|Leonie.Faber', newname: 'Daniel Reymond', image: 'https://media.licdn.com/media/p/5/005/064/11d/11092b1.jpg' }, // first
+    { oldname: 'Aleksandar.Toskovic|Tim.Kaufmann', newname: 'Jean-Luc Lecoultre', image: 'https://media.licdn.com/media/p/1/000/265/1f2/1e741a7.jpg' }, // major view
+    { oldname: 'Mickey.Mouse|Diana.Richter', newname: 'Johann Robert', image: '' },
+    { oldname: 'Ralph.Keller|Patrick.Püntener', newname: 'Enrique Garcia', image: '' },
+    { oldname: 'Christoph.Müller|Mike.Wirtz', newname: 'Raphaël Gerbex', image: '' },
+    { oldname: 'Cyrill.Hagmann', newname: 'Christian Gex', image: '' },
+    { oldname: 'Alain.Zurbriggen', newname: 'Valérie Jaggi Wepf', image: '' },
+    { oldname: 'Verena.Leitner', newname: 'Jeannine Rainaud', image: '' },
+    { oldname: 'Elmar.Volken', newname: 'Franklin Thévenaz', image: '' },
+    { oldname: 'Radu.Tut', newname: 'Olivier Maibach', image: 'http://gv2.cs.tcd.ie/images/anonymous_person.png' },
+];
+
+var images = [
+    { image: 'http://www.travys.ch/images/stories/Images/gyrobus.jpg' },
+    { image: 'http://www.travys.ch/images/stories/Images/logo_ysc_fan_01.jpg' },
+    { image: 'http://www.travys.ch/images/stories/Images/logo_bus_fan_01.gif' },
+    { image: 'http://www.travys.ch/images/stories/Images/Orbe%20gare.jpg' },
+    { image: 'http://www.travys.ch/images/Offres-et-services/Cargo/OC_terco.JPG' },
+    { image: 'http://www.travys.ch/images/stories/Images/illustrations/La_Traverse_page_accueil.JPG' },
+];
+
+var portal = [
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.45&right_x=1&bottom_y=0.9&img=http://www.bus-bild.de/1024/travys-yverdon-vd-1160-man-41967.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.4&right_x=1&bottom_y=0.85&img=http://www.bahnstatistik.de/Bilder/SBB/Travys-RBDe568385-9rw.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.4&right_x=1&bottom_y=0.8&img=http://www.bahnbilder.de/1024/soeben-hat-travys-npz-tunnel-mont-dorzeires-501137.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.3&right_x=1&bottom_y=0.7&img=http://www.bahnbilder.de/1200/travysystc-holzzuege-jura-auf-schmaler-924460.jpg' },
+];
+
+var content = [
+    { title: 'Proin neque dui.', short: 'Leo justo. Quis accumsan per porta hac. Porttitor iaculis viverra condimentum ridiculus nascetur Velit velit est euismod orci porta libero commodo dignissim nascetur vulputate.' },
+    { title: 'Etiam elementum quis enim', short: 'Proin hendrerit, felis vel mattis blandit, urna massa porttitor ante, id aliquet massa urna eget nibh. Fusce at eleifend justo, at rutrum metus' },
+    { title: 'Nunc et nisl nec leo commodo', short: 'Aliquam bibendum rhoncus urna, vitae congue leo sodales sit amet. Integer rhoncus arcu eu lacus aliquam, sed tempor velit ornare' },
+    { title: 'Nam ut ipsum ac', short: 'Integer pellentesque mattis tincidunt. Etiam venenatis lobortis lacus, accumsan auctor nisl pretium in. Aliquam porta nisl a vehicula ultrices.' },
+    { title: 'Praesent sed volutpat lacus', short: 'Etiam a lacus vitae erat pretium consectetur. Donec ultricies sed ex in sagittis. Ut mattis sapien nec arcu lacinia, eu tristique elit placerat.' },
+    { title: 'Etiam convallis nibh', short: 'Curabitur non ornare metus. Integer pharetra eget nulla quis fringilla. Nunc sagittis hendrerit ipsum' },
+    { title: 'Nam ut pulvinar dui', short: 'Curabitur dignissim tortor nisl, sed aliquet leo feugiat volutpat. Integer non enim a purus sagittis accumsan sed sed magna.' },
+    { title: 'Cum sociis natoque penatibus', short: 'Morbi a hendrerit ipsum, id luctus lorem. Curabitur sem massa, accumsan id consequat in, varius id metus. Aenean consectetur imperdiet rhoncus' },
+    { title: 'Nulla id erat semper', short: 'Pellentesque mattis est eget elementum pharetra. Integer ipsum mauris, placerat at sodales sit amet, dapibus eget enim. Sed cursus ac neque at facilisis' },
+    { title: 'Etiam dictum arcu', short: 'Sed id nulla ut nulla hendrerit aliquam. In at tellus odio. In vehicula tempus nisi, ac porttitor nisi euismod eget.' },
+];
+
+//Use with care applied at end!
+var words = [
+    { old: 'gmz|saurer', newword: 'travys' },
+    { old: 'migros', newword: 'Transports Vallée-de-Joux - Yverdon-les-Bains - Sainte-Croix' },
+];
+
+function frequencies(name) {
+    // set frequency bar heights
+    var index = 0;
+    while ($(name)[index]) {
+        var val = Math.floor(20 + Math.random() * 79);
+        $(name)[index].style.height = "calc(" + val + "% - 2px)";
+        index++;
+    }
+}
+
+function customize() {
+    //replace page icon
+    document.body.innerHTML = document.body.innerHTML.replace(/\/_layouts\/15\/images\/Colygon\.MatchPoint\.Snow\/favicon\.ico/g, look.icon);
+    // menu image colors, keep existing menu    
+    $('.mpsnow-TopNavigationNode').addClass("normalmenu")
+    $('.mpsnow-TopNavigationNode.selected').addClass("selectedmenu").removeClass("normalmenu")
+    if (look.menu === 'active' || look.menu === 'inactive') {
+        $('.mpsnow-TopNavigationNode.selectedmenu').removeClass("selected")
+    }
+    if (look.menu === 'active' || look.menu === 'inverted') {
+        $('.mpsnow-TopNavigationNode').toggleClass('selected')
+    }
+
+    for (var count = 0; count < document.styleSheets.length; count++) {
+        // links
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/a:visited[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'a:visited{\$1;\$2;color:' + look.accents + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/a:last-child.mpsnow-BreadcrumbSegment[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'a:last-child.mpsnow-BreadcrumbSegment{\$1;\$2;color:' + look.accents + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/li:hover \> \.mp-tvwpLink[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'li:hover > .mp-tvwpLink{\$1;\$2;color:' + look.accents + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/a:hover[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'a:hover{\$1;\$2;color:' + look.accents + ';}');
+
+        // Fonts
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/"Segoe UI Light",/g, '');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/"Segoe UI",/g, '');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/"Lucida Grande",/g, '');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/Tahoma,/g, '');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/Helvetica,Arial,sans-serif/g, look.font);
+
+        // Right Sidebar
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-webPartZoneRightSection[ \t\n\r]*{[ \t\n\r]*background-color[^}]+}/g, 'mpsnow-webPartZoneRightSection{background-color:' + look.RightBarBackground + '; color:' + look.RightBarColor + '}');
+        // Left Menu color
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#sideNavBox[ \t\n\r]*{([^}]*)background-color[^;}]+([^}]*)}/g, '#sideNavBox{\$1\$2;background-color:' + look.LeftBarBackground + ';color:' + look.LeftBarColor + '}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-crwpControlHeader[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'mp-crwpControlHeader{\$1color:' + look.LeftBarColor + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-webPartZoneLeftSection[ \t\n\r]+.ms-webpart-titleText[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'mpsnow-webPartZoneLeftSection .ms-webpart-titleText{\$1color:' + look.LeftBarColor + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-crwpRangeHistogramBar[ \t\n\r]*{([^}]*)background-color[^;}]+([^}]*)}/g, 'mp-crwpRangeHistogramBar{\$1background-color:' + look.LeftBarChartColor + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#sideNavBox[ \t\n\r]*{([^}]*)border-left[^;}]+([^}]*)}/g, '#sideNavBox{\$1\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#sideNavBox[ \t\n\r]*{([^}]*)border-right[^;}]+([^}]*)}/g, '#sideNavBox{\$1\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#sideNavBox[ \t\n\r]*{([^}]*)margin-right[^;}]+([^}]*)}/g, '#sideNavBox{\$1\$2}');
+
+        // Menu
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode[ \t\n\r]*{([^}]*)background-color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode{\$1\$2;background-color:' + look.passiveMenuBackground + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode{\$1\$2;color:' + look.passiveMenuColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode[ \t\n\r]*{([^}]*[^-])border-right-color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode{\$1\$2;border-right-color:' + look.menuSeparator + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#mpsnow-Logo[ \t\n\r]*{([^}]*[^-])border-right-color[^;}]+([^}]*)}/g, '#mpsnow-Logo{\$1\$2;border-right-color:' + look.menuSeparator + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#s4-titlerow[ \t\n\r]*{([^}]*)border-bottom-color[^;}]+([^}]*)}/g, '#s4-titlerow{\$1\$2;border-bottom-color:#FFF;}');
+        // Non-selected menu
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ms-breadcrumb-top[ \t\n\r]*{([^}]*)background-color[^;}]+([^}]*)}/g, 'ms-breadcrumb-top {\$1\$2;background-color:' + look.passiveMenuBackground + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-currentUser[ \t\n\r]+a[ \t\n\r]*{[ \t\n\r]*color[^;}]+([^}]*)}/g, 'mpsnow-currentUser a{\$1;color:' + look.passiveMenuColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-currentUser[ \t\n\r]+a:hover[ \t\n\r]*{[ \t\n\r]*color[^;}]+([^}]*)}/g, 'mpsnow-currentUser.normalmenu a:hover{\$1;color:' + look.passiveMenuColor + ';}');
+        // Selected menu
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode.selected[ \t\n\r]*{([^}]*)[ \t\n\r]background-color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode.selectedmenu{\$1;\$2;background-color:' + look.selectedMenuBackground + ';}\ndiv.selectedmenu{color:' + look.selectedMenuColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode.selected[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode.selectedmenu{\$1color:' + look.selectedMenuColor + ';\$2}');
+        
+        // Search Box
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-landing-toggleView-Button[ \t\n\r]*{([^}]*)[ \t\n\r]*border[^;}]+([^}]*)}/g, 'its-landing-toggleView-Button{\$1;\$2;border: 1px solid' + look.selectedMenuBackground + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-landing-toggleView-Button[ \t\n\r]*{([^}]*)[ \t\n\r]*background-color[^;}]+([^}]*)}/g, 'its-landing-toggleView-Button{\$1;\$2;background-color:' + look.passiveMenuBackground + ';}');
+
+        // Menu-separator
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-group-separator[ \t\n\r]+a[ \t\n\r]*{[ \t\n\r]*border-top-color[^;}]+([^}]*)}/g, 'mpsnow-group-separator a{\$1;border-top-color:' + look.menuSeparator + ';}');
+        // Lines in Text
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-webPartZoneMiddleSection[ \t\n\r]+\.s4-wpActive[ \t\n\r]*{([^}]*)[ \t\n\r]border-top-color[^;}]+([^}]*)}/g, 'mpsnow-webPartZoneMiddleSection .s4-wpActive{\$1;\$2;border-top-color:' + look.accents + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-tvwp.mpsnow-tab[ \t\n\r]*{([^}]*)[ \t\n\r]border-bottom-color[^;}]+([^}]*)}/g, 'mp-tvwp.mpsnow-tab{\$1;\$2;border-bottom-color:' + look.accents + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-landing-stream-header[ \t\n\r]+>[ \t\n\r]+h1[ \t\n\r]*{([^}]*)[ \t\n\r]border-color[^;}]+([^}]*)}/g, 'its-landing-stream-header > h1{\$1;\$2;border-color:' + look.accents + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/h1[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'h1{\$1;\$2;color:' + look.accents + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-tvwpLink[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'mp-tvwpLink{\$1;\$2;color:' + look.accents + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ms-core-pageTitle[ \t\n\r]+a[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'ms-core-pageTitle a{\$1;\$2;color:' + look.accents + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-selectedRow[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'mp-selectedRow{\$1;\$2;color:' + look.accents + ';}');
+
+        // Selected link 
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-tvwpLink[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile a{\$1background-color:' + look.StreamBackground + ';\$2}');
+
+        // portal stream
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile{\$1background-color:' + look.StreamBackground + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]+a[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile a{\$1background-color:' + look.StreamBackground + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-title[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-title{\$1;\$2;color:' + look.StreamColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-type[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-type{\$1;\$2;color:' + look.StreamColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-type[ \t\n\r]*{([^}]*)[ \t\n\r]*border-bottom-color[^;}]+([^}]*)}/g, 'its-stream-tile-type{\$1\$2;border-bottom-color:' + look.StreamColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-dark[ \t\n\r]+.its-stream-tile-background[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-dark .its-stream-tile-background{\$1background-color:' + look.StreamAltBackground + ';\$2}');
+
+        // stack bars
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-crwpRangeControl.ui-slider-horizontal[ \t\n\r]+\.ui-slider-range[ \t\n\r]*{([^}]*)[ \t\n\r]background-color[^;}]+([^}]*)}/g, 'mp-crwpRangeControl.ui-slider-horizontal .ui-slider-range{\$1;\$2;background-color:' + look.accents + ';}');
+
+        // portal images
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/news-compositeWP-teaser-imageContainer[ \t\n\r]*{([^}]*)background-color[^;}]+([^}]*)}/g, 'news-compositeWP-teaser-imageContainer{\$1\$2}');
+
+        // inside Newsroom:
+        // buttons
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/button\:hover[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'button:hover{\$1background-color:' + look.RightBarBackground + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/button\:hover[ \t\n\r]*{([^}]*)border-color[^;}]+;?([^}]*)}/g, 'button:hover{\$1border-color:' + look.RightBarBackground + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/button\:hover[ \t\n\r]*{([^}]*[^-])color[^;}]+;?([^}]*)}/g, 'button:hover{\$1color:' + look.RightBarColor + ';\$2}');
+        // link
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-tagAction[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'mp-tagAction{\$1color:' + look.accents + ';\$2}');
+        // curvy text boxes
+        if (look.Curve === 0) {
+            //document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ms-inputBox[ \t\n\r]*{([^}]*)}/g, 'ms-inputBox{\$1;border-radius:' + look.Curve + ';}');
+        } else {
+            document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ms-inputBox[ \t\n\r]*{([^}]*)}/g, 'ms-inputBox{\$1;border-radius:' + look.Curve + ';}');
+            document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-landing-toggleView-Button[ \t\n\r]*{([^}]*)}/g, 'its-landing-toggleView-Button{\$1;border-radius:' + look.Curve + ';}');
+            document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-searchDefinition[ \t\n\r]*{([^}]*)}/g, 'mp-searchDefinition{\$1;border-radius:' + look.Curve + ';}');
+        }
+    }
+
+    //replace logo
+    $('#mpsnow-Logo > img').attr('src', look.logo);
+    $('#mpsnow-Logo').attr('style', 'background-color:#fff'); //Custom!
+
+    //Setting people images
+    for (user of people) {
+        if (user.newname === '') {
+            continue;
+        }
+        document.body.innerHTML = document.body.innerHTML.replace(new RegExp('"[^><"]+userphoto[^><"]+accountName[^><"]+' + user.oldname + '[^><"]+"', "ig"), '"' + user.image + '"');
+        document.body.innerHTML = document.body.innerHTML.replace(new RegExp('(' + user.oldname + ')', "ig"), user.newname);
+    }
+
+    // Titles
+    $('div.mpsnow-feed-Content > div.mpsnow-post-text > blockquote > a').each(function (index) {
+        this.innerText = content[index].title;
+    });
+    $('div.news-compositeWP-teaser-textContainer > div.news-compositeWP-teaser-title > a').each(function (index) {
+        this.innerText = content[index].title;
+    });
+    // Descriptions
+    $('div.mpsnow-feed-Content > div.mpsnow-post-text > blockquote > a').parent().each(function (index) {
+        var htmlString = $(this).html();
+        var updatedHTML = htmlString.replace(/(.*<\/a>[^<]*<br>[^<]*<br>).+/g, "$1" + content[index].short);
+        this.innerHTML = updatedHTML;
+    });
+    $('div.news-compositeWP-teaser-textContainer > div.news-compositeWP-teaser-abstract').each(function (index) {
+        $(this).html(content[index].short.substring(0, content[index].short.substring(0, 70).lastIndexOf(" ")) + '<a>...</a>');
+    });
+
+    // Images  
+    $('div.mpsnow-feed-Content div.mpsnow-post-image img').each(function (index) {
+        this.src = images[index].image;
+    });
+    $('div a.news-compositeWP-teaser-picture-link img').each(function (index) {
+        this.src = images[index].image;
+    });
+
+    //Frequencies
+    frequencies('span.mp-crwpRangeHistogramBar');
+
+    // Any left over words
+    for (word of words) {
+        if (user.newword === '') {
+            continue;
+        }
+        document.body.innerHTML = document.body.innerHTML.replace(new RegExp(word.old, "ig"), word.newword);
+    }
+
+    // Content TimeLine
+    if ($('#pageTitle').text().trim() === "Timeline") {
+        //$('.mpsnow-feed-RowContainer')[0].remove();
+    }
+    // Workspaces
+    if ($('#pageTitle').text().trim() === "Workspaces") {
+    }
+    if ($('#pageTitle').text().trim() === "Content") {
+    }
+    if ($('#pageTitle').text().trim() === "People") {
+    }
+    if ($('#pageTitle').text().trim() == "News") {
+    }
+    //Potal?
+    $("div.slick-track img").each(function (index) {
+        this.src = portal[index].heroimage;
+    });
+
+    // update stream (again?)
+    for (var count = 0; count < document.styleSheets.length; count++) {
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]+a[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile a{\$1background-color:' + look.StreamBackground + ';\$2}');
+    }
+}
+
+customize();
