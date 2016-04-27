@@ -20,8 +20,9 @@ var look = {
     LeftBarColor: '#4d4d4d',
     LeftBarChartColor: '#333333',
     StreamBackground: '#ddd',
-    StreamAltBackground: '#ddd',
-    StreamColor: '#5f6565',
+    StreamAltBackground: '#bd0c19',
+    StreamOverlayBackground: 'rgba(0,0,0,0.3)',
+    StreamColor: '#fff',
     Curve: 0
 };
 //http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=1&right_x=0&bottom_y=1&img=
@@ -151,22 +152,8 @@ function customize() {
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ms-core-pageTitle[ \t\n\r]+a[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'ms-core-pageTitle a{\$1;\$2;color:' + look.accents + ';}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-selectedRow[ \t\n\r]*{([^}]*)[ \t\n\r]color[^;}]+([^}]*)}/g, 'mp-selectedRow{\$1;\$2;color:' + look.accents + ';}');
 
-        // Selected link 
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-tvwpLink[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile a{\$1background-color:' + look.StreamBackground + ';\$2}');
-
-        // portal stream
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile{\$1background-color:' + look.StreamBackground + ';\$2}');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]+a[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile a{\$1background-color:' + look.StreamBackground + ';\$2}');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-title[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-title{\$1;\$2;color:' + look.StreamColor + ';}');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-type[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-type{\$1;\$2;color:' + look.StreamColor + ';}');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-type[ \t\n\r]*{([^}]*)[ \t\n\r]*border-bottom-color[^;}]+([^}]*)}/g, 'its-stream-tile-type{\$1\$2;border-bottom-color:' + look.StreamColor + ';}');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-dark[ \t\n\r]+.its-stream-tile-background[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-dark .its-stream-tile-background{\$1background-color:' + look.StreamAltBackground + ';\$2}');
-
         // stack bars
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-crwpRangeControl.ui-slider-horizontal[ \t\n\r]+\.ui-slider-range[ \t\n\r]*{([^}]*)[ \t\n\r]background-color[^;}]+([^}]*)}/g, 'mp-crwpRangeControl.ui-slider-horizontal .ui-slider-range{\$1;\$2;background-color:' + look.accents + ';}');
-
-        // portal images
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/news-compositeWP-teaser-imageContainer[ \t\n\r]*{([^}]*)background-color[^;}]+([^}]*)}/g, 'news-compositeWP-teaser-imageContainer{\$1\$2}');
 
         // inside Newsroom:
         // buttons
@@ -175,16 +162,26 @@ function customize() {
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/button\:hover[ \t\n\r]*{([^}]*[^-])color[^;}]+;?([^}]*)}/g, 'button:hover{\$1color:' + look.RightBarColor + ';\$2}');
         // link
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-tagAction[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'mp-tagAction{\$1color:' + look.accents + ';\$2}');
+
         // curvy text boxes
-        if (look.Curve === 0) {
-            //document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ms-inputBox[ \t\n\r]*{([^}]*)}/g, 'ms-inputBox{\$1;border-radius:' + look.Curve + ';}');
-        } else {
+        if (look.Curve !== 0) {
             document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/ms-inputBox[ \t\n\r]*{([^}]*)}/g, 'ms-inputBox{\$1;border-radius:' + look.Curve + ';}');
             document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-landing-toggleView-Button[ \t\n\r]*{([^}]*)}/g, 'its-landing-toggleView-Button{\$1;border-radius:' + look.Curve + ';}');
             document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mp-searchDefinition[ \t\n\r]*{([^}]*)}/g, 'mp-searchDefinition{\$1;border-radius:' + look.Curve + ';}');
         }
-    }
 
+        // portal stream
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile{\$1background-color:' + look.StreamBackground + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]+a[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile a{\$1background-color:' + look.StreamBackground + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-title[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-title{\$1;\$2;color:' + look.StreamColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-type[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-type{\$1;\$2;color:' + look.StreamColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-abstract[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-abstract{\$1;\$2;color:' + look.StreamColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-type[ \t\n\r]*{([^}]*)[ \t\n\r]*border-(bottom-)*color[^;}]+([^}]*)}/g, 'its-stream-tile-type{\$1\$3;border-\$2color:' + look.StreamColor + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-light[ \t\n\r]+.its-stream-tile-background[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-light .its-stream-tile-background{\$1background-color:' + look.StreamBackground + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-dark[ \t\n\r]+.its-stream-tile-background[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-dark .its-stream-tile-background{\$1background-color:' + look.StreamAltBackground + ';\$2}');        
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-background-overlay[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-background-overlay{\$1background-color:' + look.StreamOverlayBackground + ';\$2}');
+    }
+    $('.ng-hide').each(function (index){this.remove();});
     //replace logo
     $('#mpsnow-Logo > img').attr('src', look.logo);
     $('#mpsnow-Logo').attr('style', 'background-color:#fff'); //Custom!
@@ -250,6 +247,16 @@ function customize() {
     //Potal?
     $("div.slick-track img").each(function (index) {
         this.src = portal[index].heroimage;
+    });
+    //Alt portal
+    $("div.its-stream-tile-background-image").each(function (index) {
+        $(this).attr('style', 'background-image: url("' + portal[index % portal.length].heroimage + '");');
+    });
+    $('.its-stream-tile-title').each(function (index) {
+        $(this).html(content[index % content.length].title);
+    });
+    $('.its-stream-tile-abstract').each(function (index) {
+        $(this).html(content[index % content.length].short.substring(0, content[index % content.length].short.substring(0, 70).lastIndexOf(" ")) + '...');
     });
 
     // update stream (again?)
