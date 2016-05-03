@@ -1,6 +1,7 @@
 /*
 //Load this script
 // use https://vc0086.virtualcorp.ch/snow/SitePages/Content.aspx
+// use https://vc0095.virtualcorp.ch/snow/SitePages/Timeline.aspx
 $.getScript("./Replace.js")
 */
 var look = {
@@ -27,9 +28,9 @@ var look = {
 };
 //http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=1&right_x=0&bottom_y=1&img=
 var people = [
-    { oldname: 'Maria.Studer', newname: 'Michael Schürch', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.3&top_y=0.05&right_x=0.7&bottom_y=0.8&img=https://media.licdn.com/media/AAEAAQAAAAAAAAbTAAAAJGNiOWRkZjdjLWZhNmMtNDFhZC05M2MyLTEzMThiMDJmMTBkZQ.jpg' }, // logged in user
-    { oldname: 'Christoph.Enderli|Leonie.Faber', newname: 'Ivan Buck', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.25&top_y=0&right_x=0.75&bottom_y=0.8&img=https://media.licdn.com/media/AAEAAQAAAAAAAAO7AAAAJDYzMjg5N2M3LTY4MjQtNDI4ZS1hOTM0LTBkYWZiZmY2OTE1MQ.jpg' }, // first
-    { oldname: 'Aleksandar.Toskovic|Tim.Kaufmann', newname: 'Gerhard Züger', image: '' }, // major view
+    { oldname: 'Maria.Studer', newname: 'Bruno Baumgartner', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.38&top_y=0.56&right_x=0.46&bottom_y=0.72&img=https://t1dccw.dm2302.livefilestore.com/y3mUJaqPj7PsX0xMljGBN3nMa244XkOFkZYZsz14yJXdogmwPjw-WY-GEkpcv_W6RvaxFybtXys0YjxH7WNbRm7wgRDOCYwhwgh8ScjTRfc-je0bBN3UcSejrvGyw13P7iJCZCavQqrNZ9QP2EvdXayHlGYWcCyMcIhjknRXtPAlbg/2016-05-03.png' }, 
+    { oldname: 'Christoph.Enderli|Leonie.Faber', newname: 'Thomas Küchler', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.13&top_y=0.56&right_x=0.22&bottom_y=0.72&img=https://t1dccw.dm2302.livefilestore.com/y3mUJaqPj7PsX0xMljGBN3nMa244XkOFkZYZsz14yJXdogmwPjw-WY-GEkpcv_W6RvaxFybtXys0YjxH7WNbRm7wgRDOCYwhwgh8ScjTRfc-je0bBN3UcSejrvGyw13P7iJCZCavQqrNZ9QP2EvdXayHlGYWcCyMcIhjknRXtPAlbg/2016-05-03.png' }, 
+    { oldname: 'Aleksandar.Toskovic|Tim.Kaufmann', newname: 'Manuela Hutter', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.21&top_y=0.05&right_x=0.82&bottom_y=0.75&img=http://www.sob.ch/typo3temp/pics/3d64e2a315.jpg' },
     { oldname: 'Mickey.Mouse|Diana.Richter', newname: 'Andrea Felix', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.3&top_y=0&right_x=0.75&bottom_y=0.6&img=https://media.licdn.com/media/AAEAAQAAAAAAAAfEAAAAJGFkY2U5YmFmLTdhY2MtNGNjZC04ZGI0LTVkMWI2MWYyMTNhNg.jpg' },
     { oldname: 'Ralph.Keller|Patrick.Püntener', newname: 'Renato Fasciati', image: 'https://media.licdn.com/media/p/2/000/0c0/166/09be95d.jpg' },
     { oldname: 'Christoph.Müller|Mike.Wirtz|Stefan.Luginb.hl|Stefan.Luginb..hl', newname: 'Andreas Piattini', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.2&top_y=0&right_x=0.75&bottom_y=0.8&img=https://media.licdn.com/media/p/5/005/036/375/160f564.jpg' },
