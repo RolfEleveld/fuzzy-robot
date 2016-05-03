@@ -1,7 +1,7 @@
 /*
 //Load this script
 // use https://vc0086.virtualcorp.ch/snow/SitePages/Content.aspx
-// use https://vc0095.virtualcorp.ch/snow/SitePages/Timeline.aspx
+// use https://vc0095.virtualcorp.ch/snow/SitePagevirtualcorps/Timeline.aspx
 $.getScript("./Replace.js")
 */
 var look = {
@@ -15,13 +15,13 @@ var look = {
     passiveMenuBackground: 'rgb(222,230,230)',
     passiveMenuColor: '#000',
     menuSeparator: 'rgb(222,230,230)',
-    RightBarBackground: '#e1001a', // also buttons
+    RightBarBackground: 'rgb(171,171,171)', // also buttons
     RightBarColor: '#fff', // also button txt
-    LeftBarBackground: 'rgb(231,231,231)',
+    LeftBarBackground: 'rgb(222,230,230)',
     LeftBarColor: '#000',
     LeftBarChartColor: '#e52931',
     StreamBackground: '#e52931',
-    StreamAltBackground: '#e52931',
+    StreamAltBackground: '#aaa',
     StreamOverlayBackground: 'rgba(0,0,0,0.3)',
     StreamColor: '#fff',
     Curve: 0
@@ -30,31 +30,30 @@ var look = {
 var people = [
     { oldname: 'Maria.Studer', newname: 'Bruno Baumgartner', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.38&top_y=0.56&right_x=0.46&bottom_y=0.72&img=https://t1dccw.dm2302.livefilestore.com/y3mUJaqPj7PsX0xMljGBN3nMa244XkOFkZYZsz14yJXdogmwPjw-WY-GEkpcv_W6RvaxFybtXys0YjxH7WNbRm7wgRDOCYwhwgh8ScjTRfc-je0bBN3UcSejrvGyw13P7iJCZCavQqrNZ9QP2EvdXayHlGYWcCyMcIhjknRXtPAlbg/2016-05-03.png' }, 
     { oldname: 'Christoph.Enderli|Leonie.Faber', newname: 'Thomas Küchler', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.13&top_y=0.56&right_x=0.22&bottom_y=0.72&img=https://t1dccw.dm2302.livefilestore.com/y3mUJaqPj7PsX0xMljGBN3nMa244XkOFkZYZsz14yJXdogmwPjw-WY-GEkpcv_W6RvaxFybtXys0YjxH7WNbRm7wgRDOCYwhwgh8ScjTRfc-je0bBN3UcSejrvGyw13P7iJCZCavQqrNZ9QP2EvdXayHlGYWcCyMcIhjknRXtPAlbg/2016-05-03.png' }, 
-    { oldname: 'Aleksandar.Toskovic|Tim.Kaufmann', newname: 'Manuela Hutter', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.21&top_y=0.05&right_x=0.82&bottom_y=0.75&img=http://www.sob.ch/typo3temp/pics/3d64e2a315.jpg' },
-    { oldname: 'Mickey.Mouse|Diana.Richter', newname: 'Andrea Felix', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.3&top_y=0&right_x=0.75&bottom_y=0.6&img=https://media.licdn.com/media/AAEAAQAAAAAAAAfEAAAAJGFkY2U5YmFmLTdhY2MtNGNjZC04ZGI0LTVkMWI2MWYyMTNhNg.jpg' },
-    { oldname: 'Ralph.Keller|Patrick.Püntener', newname: 'Renato Fasciati', image: 'https://media.licdn.com/media/p/2/000/0c0/166/09be95d.jpg' },
-    { oldname: 'Christoph.Müller|Mike.Wirtz|Stefan.Luginb.hl|Stefan.Luginb..hl', newname: 'Andreas Piattini', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.2&top_y=0&right_x=0.75&bottom_y=0.8&img=https://media.licdn.com/media/p/5/005/036/375/160f564.jpg' },
-    { oldname: 'Cyrill.Hagmann', newname: 'Christian Gex', image: '' },
-    { oldname: 'Alain.Zurbriggen', newname: 'Gunthard Orglmeister', image: '' },
-    { oldname: 'Verena.Leitner|Andr..Heymann', newname: 'Schneider Corina', image: '' },
-    { oldname: 'Elmar.Volken', newname: 'Ammann Selma', image: '' },
-    { oldname: 'Radu.Tut', newname: '', image: 'http://gv2.cs.tcd.ie/images/anonymous_person.png' },
+    { oldname: 'Aleksandar.Toskovic|Tim.Kaufmann', newname: 'Henrich Güttinger', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.13&top_y=0.735&right_x=0.21&bottom_y=0.89&img=https://t1dccw.dm2302.livefilestore.com/y3mUJaqPj7PsX0xMljGBN3nMa244XkOFkZYZsz14yJXdogmwPjw-WY-GEkpcv_W6RvaxFybtXys0YjxH7WNbRm7wgRDOCYwhwgh8ScjTRfc-je0bBN3UcSejrvGyw13P7iJCZCavQqrNZ9QP2EvdXayHlGYWcCyMcIhjknRXtPAlbg/2016-05-03.png' },
+    { oldname: 'Mickey.Mouse|Diana.Richter', newname: 'Manuela Hutter', image: '' },
+    { oldname: 'Ralph.Keller|Patrick.Püntener', newname: 'Marianne Reisner-Schmid', image: '' },
+    { oldname: 'Christoph.Müller|Mike.Wirtz|Stefan.Luginb.hl|Stefan.Luginb..hl', newname: 'Ronald Kressbach', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.365&top_y=0.735&right_x=0.44&bottom_y=0.89&img=https://t1dccw.dm2302.livefilestore.com/y3mUJaqPj7PsX0xMljGBN3nMa244XkOFkZYZsz14yJXdogmwPjw-WY-GEkpcv_W6RvaxFybtXys0YjxH7WNbRm7wgRDOCYwhwgh8ScjTRfc-je0bBN3UcSejrvGyw13P7iJCZCavQqrNZ9QP2EvdXayHlGYWcCyMcIhjknRXtPAlbg/2016-05-03.png' },
+    { oldname: 'Cyrill.Hagmann', newname: 'Daniel Kobler', image: '' },
+    { oldname: 'Alain.Zurbriggen', newname: 'Michael Sutter', image: '' },
+    { oldname: 'Verena.Leitner|Andr..Heymann', newname: 'Claudia Krucker', image: '' },
+    { oldname: 'Elmar.Volken', newname: 'Stefan Hähnlein', image: '' },
+    { oldname: 'Radu.Tut', newname: 'Markus Frei', image: 'http://gv2.cs.tcd.ie/images/anonymous_person.png' },
 ];
 
 var images = [
-    { image: 'http://sob.ch/sites/default/files/imagecache/frontpage_thumb/MM%20Zwischenbericht.jpg' },
-    { image: 'https://www.sob.ch/sites/default/files/imagecache/gallery_thumb/gallery/_MG_0415.jpg' },
-    { image: 'http://www.sob.ch/sites/default/files/imagecache/thumb/logo-jeder-tag-ist-oev-tag-2016_0.png' },
-    { image: 'http://www.sob.ch/sites/default/files/imagecache/thumb/respekt2.jpg' },
-    { image: 'http://www.sob.ch/sites/default/files/imagecache/thumb/IMG_1697.JPG' },
-    { image: 'https://www.sob.ch/sites/default/files/imagecache/gallery_thumb/ZB_11-12-19_222_Ivan%20Buck_50x50.JPG' },
+    { image: 'http://www.sob.ch/uploads/pics/SOB-Streckennetz.jpg' },
+    { image: 'http://www.sob.ch/uploads/pics/kugelschreiber.jpg' },
+    { image: 'http://freizeit.sob.ch/Images/SOB/8122985303_38824377b8_z.jpg' },
+    { image: 'http://www.sob.ch/uploads/pics/Fuehrerstandsfahrt_47.jpg' },
+    { image: 'http://www.sob.ch/uploads/pics/S4_Sargans_Schloss-_Falknis_web.jpg' },
+    { image: 'http://www.sob.ch/uploads/pics/Kontrollfahrt_15.jpg' },
 ];
 
 var portal = [
-    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.25&right_x=1&bottom_y=0.75&img=http://www.stadlerrail.com/media/tmp/catalogue/909-zb-3-7tl-aussen-szene-see_jpg_800x600_q95.jpg' },
-    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.15&right_x=1&bottom_y=0.8&img=http://www.stadlerrail.com/media/tmp/uploads/stadler/spezialausfuehrungen/Zentralbahn_AG_Schweiz_jpg_960x350_crop_q95.jpg' },
-    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.2&right_x=1&bottom_y=0.75&img=http://www.rail-pictures.com/1024/zentralbahn-zb-de-44-110-7332.jpg' },
-    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.3&right_x=1&bottom_y=0.7&img=http://www.rail-pictures.com/1024/zentralbahn-zb-de-110-022-1-7828.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.1&top_y=0.51&right_x=0.8&bottom_y=0.65&img=https://upload.wikimedia.org/wikipedia/commons/8/80/Ebnat_Kappel_SOB_FLIRT.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.1&right_x=1&bottom_y=0.75&img=http://www.stadlerrail.com/media/tmp/uploads/stadler/flirt/Schweizerische_Suedostbahn_AG_SOB_Schweiz_JPG_960x350_crop_q95.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.01&top_y=0.3&right_x=1&bottom_y=0.8&img=http://www.bahnbilder.de/1024/sob--voralpen-express--633473.jpg' }
 ];
 
 var content = [
@@ -72,9 +71,9 @@ var content = [
 
 //Use with care applied at end!
 var words = [
-    { old: 'gmz|saurer|Frutiger', newword: 'zb' },
-    { old: 'migros', newword: 'Die Zentralbahn' },
-    { old: '\@itsystems.ch|\@zb.com', newword: '' },
+    { old: 'gmz|saurer|Frutiger', newword: 'SOB' },
+    { old: 'migros', newword: 'Südostbahn' },
+    { old: '\@itsystems.ch|\@SOB.com', newword: '' },
 ];
 
 function frequencies(name) {
