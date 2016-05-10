@@ -1,6 +1,6 @@
 /*
 //Load this script
-// use https://vc0095.virtualcorpvirtualcorp\.ch/snow/SitePages/Timeline.aspx
+// used https://vc0086.virtualcorp.ch/snow/
 $.getScript("./Replace.js")
 */
 var look = {
