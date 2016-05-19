@@ -1,12 +1,12 @@
 /*
 //Load this script
-// used https://vc0095.virtualcorp.ch/snow/ and https://vc0086.virtualcorp.ch/snow
+// used https://vc0095.virtualcorp.ch/snow/ and https:/virtualcorp/vc0086.virtualcorp.ch/snow
 $.getScript("./Replace.js")
 */
 var look = {
     font: 'Arial,Helvetica,Sans Serif',
     icon: 'http://www.vbg.ch/favicon.ico',
-    logo: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.2&top_y=0.27&right_x=1&bottom_y=1&img=http://www.vbg.ch/templates/vbg_home_neu/images/vbg2.gif',
+    logo: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.2&top_y=0.3&right_x=1&bottom_y=0.7&img=http://curiousabout.ch/wp-content/uploads/2014/07/ref_stimmen_VBG.png',
     accents: '#0153b6',
     selectedMenuBackground: '#96B2DA',
     selectedMenuColor: '#000',
@@ -37,31 +37,28 @@ var words = [
 
 //http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0&right_x=1&bottom_y=1&img=
 var people = [
-    { oldname: 'Maria.Studer', newname: 'Pascal Vuilleumier', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.1&top_y=0&right_x=0.9&bottom_y=1&img=https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/1/000/121/183/33e9d42.jpg' }, // logged in user
-    { oldname: 'stefan.luginb.hl|stefan.luginbuehl', newname: 'Cédric Aubry', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.3&top_y=0.2&right_x=0.9&bottom_y=0.9&img=https://media.licdn.com/media/p/2/000/03d/3d2/2318746.jpg' },
-    { oldname: 'dev.spinstall', newname: 'David Robert', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.35&top_y=0&right_x=0.65&bottom_y=0.5&img=https://media.licdn.com/media/AAEAAQAAAAAAAALbAAAAJDU0NjI0MzdlLTYyYjAtNDI1Yi1iNjljLTYxMDQ3ZWUwYmExNA.jpg' },
-    { oldname: 'radu.tut', newname: 'Philippe Kuster', image: '' },
-    { oldname: 'Verena.Leitner|Andr..Heymann', newname: 'Patricia Borloz', image: '' },
-    { oldname: 'Elmar.Volken', newname: 'Yves Tabasso', image: 'http://gv2.cs.tcd.ie/images/anonymous_person.png' },
-    { oldname: 'alain.zurbriggen', newname: 'Aline Odot', image: '' },
-    { oldname: 'cyrill.hagmann', newname: 'Marco Russo', image: '' },
+    { oldname: 'Maria.Studer', newname: 'Matthias Keller', image: 'http://www.vbg.ch/images/stories/personalbilder/keller_93x140.jpg' }, // logged in user
+    { oldname: 'stefan.luginb.hl|stefan.luginbuehl', newname: 'Thomas Kreyenbühl', image: 'http://www.vbg.ch/images/stories/personalbilder/kreyenbuehl_93x140.jpg' },
+    { oldname: 'dev.spinstall', newname: 'Urs Fiechter', image: 'http://www.vbg.ch/images/stories/personalbilder/fiechter_93x140.jpg' },
+    { oldname: 'radu.tut', newname: 'Gabriele Knecht', image: '' },
+    { oldname: 'Verena.Leitner|Andr..Heymann', newname: 'Karin Faes', image: '' },
+    { oldname: 'Elmar.Volken', newname: 'Urs Feuz', image: 'http://gv2.cs.tcd.ie/images/anonymous_person.png' },
+    { oldname: 'alain.zurbriggen', newname: 'Marco Hardegger', image: '' },
+    { oldname: 'cyrill.hagmann', newname: 'Katrin Piazza', image: '' },
 ];
 
 var images = [
-    { image: 'http://www.vbg.ch/fileadmin/_migrated/pics/snowbus_01.gif' },
-    { image: 'http://www.vbg.ch/fileadmin/_migrated/pics/DSC03068_copie.jpg' },
+    { image: 'http://www.burri.world/sites/default/files/styles/square_3_col/public/marcel_clot_7688.jpg' },    
+    { image: 'http://zueri-nord.info/sites/zueri-nord.info/files/imagecache/vorschau-150/artikel/1/ticketautomat.jpg' },
+    { image: 'http://photo.proaktiva.eu/thumbs128/081001.09.jpg' },
     { image: 'http://transport131.com.pl/bmartin125.png' },
-    { image: 'http://www.gehri.ch/news/reisezentrum_2.jpg' },
-    { image: 'http://www.bahnbilder.de/1200/cmntrntransn-tm-22-11-800391.jpg' },
+    { image: 'http://www.railforthevalley.com/wp-content/uploads/2010/12/serlock.jpg' },
+    { image: 'http://photo.proaktiva.eu/tram/zurich/vbg_ci_cobra.jpg' },
 ];
 
 var portal = [
-    { heroimage: 'http://www.vbg.ch/fileadmin/transn/fond/fond-header-hp.jpg' },
-    { heroimage: 'http://www.vbg.ch/fileadmin/transn/fond/fond-header-portrait.jpg' },
-    { heroimage: 'http://www.vbg.ch/fileadmin/transn/fond/fond-header-contact.jpg' },
-    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.25&right_x=1&bottom_y=0.65&img=http://www.vbg.ch/fileadmin/_processed_/csm_Chaumont_funi_et_cabane_fev_2011_4c83e850a8.jpg' },
-    { heroimage: 'http://www.vbg.ch/fileadmin/_migrated/pics/voitureSalon2.jpg' },
-    { heroimage: 'http://www.vbg.ch/fileadmin/_migrated/pics/DSC03068_copie.jpg' },    
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.2&right_x=1&bottom_y=0.67&img=http://www.vbg.ch/images/stories/Bilder_Glattalbus_gross/20110504_Komposition_01_ret_v02__.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.3&right_x=1&bottom_y=0.9&img=http://www.vbg.ch/images/stories/Bilder_Glattalbus_gross/Busse_Effi.jpg' },    
 ];
 
 var content = [
