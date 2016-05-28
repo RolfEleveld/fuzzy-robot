@@ -8,8 +8,8 @@ var look = {
     basecolor: '#fff',
     basebackground: 'url(http://www.crossrail.ch/gfx/crossrail-splash.jpg) #191919',
     icon: 'http://crossrail.ch/favicon.ico',
-    logo: 'https://upload.wikimedia.org/wikipedia/en/thumb/7/7a/Crossrail_benelux_logo.jpg/200px-Crossrail_benelux_logo.jpg',
-    logobackground: '#191919',
+    logo: 'http://exon.ch/img/k-crossrail.gif',
+    logobackground: '#d8041b',
     accents: '#d8041b',
     selectedMenuBackground: '#d8041b',
     selectedMenuColor: '#fff',
@@ -20,7 +20,7 @@ var look = {
     menuSeparator: '#191919',
     RightBarBackground: '#fff', // also buttons
     RightBarColor: '#323232', // also button txt
-    RightBarIcons: 'white', //white/black
+    RightBarIcons: 'black', //white/black
     RightBarLineColor: '#191919',
     LeftBarBackground: '#191919',
     LeftBarColor: '#fff',
@@ -42,32 +42,32 @@ var words = [
 
 //http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0&right_x=1&bottom_y=1&img=
 var people = [
-    { oldname: 'Maria.Studer', newname: 'Dr. Severin Rangosch', image: 'http://crossrail.ch/images/_Bilder/Unternehmen/Organisation/2015/rangosch.jpg' }, // logged in user
-    { oldname: 'stefan.luginb.hl|stefan.luginbuehl', newname: 'Stefan Bosshard', image: 'http://crossrail.ch/images/_Bilder/Unternehmen/Organisation/2015/stefan_bosshard.jpg' },
-    { oldname: 'dev.spinstall', newname: 'Catherine Spiegel', image: 'http://crossrail.ch/images/_Bilder/Unternehmen/Organisation/2015/spiegel.jpg' },
-    { oldname: 'radu.tut', newname: 'Walter Oettli', image: 'http://crossrail.ch/images/_Bilder/Unternehmen/Organisation/2015/oettli.jpg' },
-    { oldname: 'Verena.Leitner|Andr..Heymann', newname: 'René Fasel', image: 'http://crossrail.ch/images/_Bilder/Unternehmen/Organisation/2015/fasel.jpg' },
-    { oldname: 'Elmar.Volken', newname: 'Thomas Koch', image: 'http://crossrail.ch/images/_Bilder/Unternehmen/Organisation/2015/koch.jpg' },
-    { oldname: 'alain.zurbriggen', newname: 'Reto Häusermann', image: '' },
-    { oldname: 'cyrill.hagmann', newname: 'Thomas Koch', image: 'http://gv2.cs.tcd.ie/images/anonymous_person.png' },
+    { oldname: 'Maria.Studer', newname: 'Jeroen Le Jeune', image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0.45&top_y=0.58&right_x=0.55&bottom_y=0.8&img=http://www.railjournal.com/images/stories/lejeune.jpg' }, // logged in user
+    { oldname: 'stefan.luginb.hl|stefan.luginbuehl', newname: 'Nils van Vliet', image: 'https://media.licdn.com/media/p/2/000/250/075/2aec3cb.jpg' },
+    { oldname: 'dev.spinstall', newname: 'René Frieswijk', image: '' },
+    { oldname: 'radu.tut', newname: 'Kurt Van de Voorde', image: '' },
+    { oldname: 'Verena.Leitner|Andr..Heymann', newname: '', image: '' },
+    { oldname: 'Elmar.Volken', newname: 'Leo van Thielen', image: '' },
+    { oldname: 'alain.zurbriggen', newname: 'Sergio Ryffel', image: '' },
+    { oldname: 'cyrill.hagmann', newname: 'Patrick De Baets', image: 'http://gv2.cs.tcd.ie/images/anonymous_person.png' },
 ];
 
 var images = [
-    { image: 'http://crossrail.ch/images/_Bilder/aktuelles/limmattalbahn_260x180.jpg' },
-    { image: 'http://crossrail.ch/images/bdwm14/unternehmen/wm.jpg' },
-    { image: 'http://crossrail.ch/images/bdwm14/unternehmen/libu.jpg' },
-    { image: 'http://crossrail.ch/images/bdwm14/unternehmen/schnellbus.jpg' },
-    { image: 'http://crossrail.ch/images/_Bilder/Unternehmen/Rollmaterial/diamant_260px_obertor.jpg' },
-    { image: 'http://crossrail.ch/images/_Bilder/Unternehmen/Rollmaterial/diamant_2kl_screen_260px.jpg' },
+    { image: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.1&right_x=1&bottom_y=0.9&img=http://www.bahnbilder.de/1200/crossrail-loks-436-114-785293.jpg' },
+    { image: 'http://www.michaeltaylor.ca/nederland/loco/de6314-mt.jpg' },
+    { image: 'http://www.bahnbilder.de/1024/crossrail-185-580-jana-am-384016.jpg' },
+    { image: 'http://www.bahnpics.com/nil/06.02.11%20Wassen/DSC_5916a.jpg' },
+    { image: 'http://www.bahnbilder.de/1024/crossrail-185-593-1-mit-crossrail-581712.jpg' },
+    { image: 'http://shop.zugkraft-stucki.ch/data/bilder/16225_HAG_EL_20111018_02_b.jpg' },
+    { image: 'http://www.reisezugwagen.eu/wp-content/uploads/Piko_96732_Seite.jpg' },
 ];
 
 var portal = [
-    { heroimage: 'http://crossrail.ch/images/headers/header_unternehmen.jpg' },
-    { heroimage: 'http://crossrail.ch/images/headers/header_zmorge_1100px.jpg' },
-    { heroimage: 'http://crossrail.ch/images/headers/header_reisen.jpg' },
-    { heroimage: 'http://crossrail.ch/images/headers/postauto_innen.jpg' },
-    { heroimage: 'http://crossrail.ch/images/headers/sebni_1100x200.jpg' },
-    { heroimage: 'http://crossrail.ch/images/headers/header_service.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.3&right_x=0.9&bottom_y=0.8&img=http://www.bahnbilder.de/1200/gleich-vier-crossrail-loks-bemuehen-sich-736437.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.3&right_x=1&bottom_y=1&img=https://c2.staticflickr.com/6/5061/5664552924_f7951c1e0a_b.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.2&right_x=1&bottom_y=0.7&img=http://www.bahnbilder.de/1200/crossrail-loks-186-906-4-851547.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.3&right_x=1&bottom_y=0.8&img=http://www.bahnbilder.de/1200/crossrail-de-6309-92-80-1266-797649.jpg' },
+    { heroimage: 'http://cropserviceusingbasicweb.azurewebsites.net/Get.aspx?left_x=0&top_y=0.3&right_x=1&bottom_y=0.8&img=http://www.bahnbilder.de/1200/crossrail-185-581-6-celine-alia-863413.jpg' },
 ];
 
 var content = [
@@ -209,10 +209,10 @@ function lookAndFeel() {
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#sideNavBox[ \t\n\r]*{([^}]*)border-left[^;}]+([^}]*)}/g, '#sideNavBox{\$1\$2}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#sideNavBox[ \t\n\r]*{([^}]*)border-right[^;}]+([^}]*)}/g, '#sideNavBox{\$1\$2}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#sideNavBox[ \t\n\r]*{([^}]*)margin-right[^;}]+([^}]*)}/g, '#sideNavBox{\$1\$2}');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-group-separator[ \t\n\r]*{([^}]*)border-top-color[^;}]+([^}]*)}/g, 'mpsnow-group-separator a{\$1;border-top-color:' + look.LeftBarLineColor + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-group-separator[ \t\n\r]*{([^}]*)border-top-color[^;}]+([^}]*)}/g, 'mpsnow-group-separator {\$1border-top-color:' + look.LeftBarLineColor + ';\$2}');
 
         // Menu
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode[ \t\n\r]*{([^}]*)background-color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode{\$1\$2;background-color:' + look.passiveMenuBackground + ';}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode[ \t\n\r]*{([^}]*[^-])background-color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode{\$1background-color:' + look.passiveMenuBackground + ';\$2}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode{\$1\$2;color:' + look.passiveMenuColor + ';}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-TopNavigationNode[ \t\n\r]*{([^}]*[^-])border-right-color[^;}]+([^}]*)}/g, 'mpsnow-TopNavigationNode{\$1\$2;border-right-color:' + look.menuSeparator + ';}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/#mpsnow-Logo[ \t\n\r]*{([^}]*[^-])border-right-color[^;}]+([^}]*)}/g, '#mpsnow-Logo{\$1\$2;border-right-color:' + look.menuSeparator + ';}');
@@ -264,7 +264,7 @@ function lookAndFeel() {
 
         // portal stream
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile{\$1background-color:' + look.StreamBackground + ';\$2}');
-        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]+a[ \t\n\r]*{([^}]*)background-color[^;}]+;*([^}]*)}/g, 'its-stream-tile a{\$1background-color:' + look.StreamBackground + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile[ \t\n\r]+a[ \t\n\r]*{([^}]*)background-color[^;}]*([^}]*)}/g, 'its-stream-tile a{\$1background-color:' + look.StreamBackground + '\$2}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-title[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-title{\$1;\$2;color:' + look.StreamColor + ';}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-type[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-type{\$1;\$2;color:' + look.StreamColor + ';}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-abstract[ \t\n\r]*{([^}]*[^-])color[^;}]+([^}]*)}/g, 'its-stream-tile-abstract{\$1;\$2;color:' + look.StreamColor + ';}');
@@ -273,11 +273,12 @@ function lookAndFeel() {
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-dark[ \t\n\r]+.its-stream-tile-background[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-dark .its-stream-tile-background{\$1background-color:' + look.StreamAltBackground + ';\$2}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-background-overlay[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-background-overlay{\$1background-color:' + look.StreamOverlayBackground + ';\$2}');
     }
-
+    
+    //remove non visible components
     $('.ng-hide').each(function (index) { this.remove(); });
     //replace logo
     $('#mpsnow-Logo > img').attr('src', look.logo);
-    $('.its-stream-tile-content').attr('style', "background-color:" + look.logobackground + ";");
+    $('div.ms-breadcrumb-top').attr('style', "background-color:"+look.logobackground+";");
 
     //right bar icons
     for (RightBarIconSet of RightBarIcons) {
