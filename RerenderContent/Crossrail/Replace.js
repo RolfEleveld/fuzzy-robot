@@ -46,7 +46,7 @@ var people = [
     { oldname: 'stefan.luginb.hl|stefan.luginbuehl', newname: 'Nils van Vliet', image: 'https://media.licdn.com/media/p/2/000/250/075/2aec3cb.jpg' },
     { oldname: 'dev.spinstall', newname: 'René Frieswijk', image: '' },
     { oldname: 'radu.tut', newname: 'Kurt Van de Voorde', image: '' },
-    { oldname: 'Verena.Leitner|Andr..Heymann', newname: '', image: '' },
+    { oldname: 'Verena.Leitner|Andr..Heymann', newname: 'Martin Neese', image: '' },
     { oldname: 'Elmar.Volken', newname: 'Leo van Thielen', image: '' },
     { oldname: 'alain.zurbriggen', newname: 'Sergio Ryffel', image: '' },
     { oldname: 'cyrill.hagmann', newname: 'Patrick De Baets', image: 'http://gv2.cs.tcd.ie/images/anonymous_person.png' },
@@ -171,6 +171,9 @@ function frequencies(name) {
 function lookAndFeel() {
     //replace page icon
     document.body.innerHTML = document.body.innerHTML.replace(/\/_layouts\/15\/images\/Colygon\.MatchPoint\.Snow\/favicon\.ico/g, look.icon);
+    // embedded style for portal
+    document.body.innerHTML = document.body.innerHTML.replace(/its-stream-tile[ \t\n\r]+a[ \t\n\r]*{([^}]*)background-color[^;}]*([^}]*)}/g, 'its-stream-tile a{\$1background-color:' + look.StreamBackground + '\$2}');
+
     // menu image colors, keep existing menu    
     for (var count = 0; count < document.styleSheets.length; count++) {
         // global background, border colors and colors
@@ -272,13 +275,15 @@ function lookAndFeel() {
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-light[ \t\n\r]+.its-stream-tile-background[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-light .its-stream-tile-background{\$1background-color:' + look.StreamBackground + ';\$2}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-dark[ \t\n\r]+.its-stream-tile-background[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-dark .its-stream-tile-background{\$1background-color:' + look.StreamAltBackground + ';\$2}');
         document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/its-stream-tile-background-overlay[ \t\n\r]*{([^}]*)background-color[^;}]+;?([^}]*)}/g, 'its-stream-tile-background-overlay{\$1background-color:' + look.StreamOverlayBackground + ';\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/news-compositeWP-teaser-Container[ \t\n\r]*{([^}]*)[ \t\n\r]border-color[^;}]+([^}]*)}/g, 'news-compositeWP-teaser-Container {\$1border-color:' + look.basecolor + '\$2}');
+        document.styleSheets[count].cssText = document.styleSheets[count].cssText.replace(/mpsnow-feed-Row[ \t\n\r]*{([^}]*)[ \t\n\r]border-top-color[^;}]+([^}]*)}/g, 'mpsnow-feed-Row {\$1border-top-color:' + look.basecolor + '\$2}');       
     }
-    
+
     //remove non visible components
     $('.ng-hide').each(function (index) { this.remove(); });
     //replace logo
     $('#mpsnow-Logo > img').attr('src', look.logo);
-    $('div.ms-breadcrumb-top').attr('style', "background-color:"+look.logobackground+";");
+    $('div.ms-breadcrumb-top').attr('style', "background-color:" + look.logobackground + ";");
 
     //right bar icons
     for (RightBarIconSet of RightBarIcons) {
